@@ -1,8 +1,0 @@
-
-Isquid:S1481"&Remove this unused "a" local variable.(¥À¨ÿøÿÿÿÿ8ãˆ¦ú÷-
-Xsquid:S1854"5Remove this useless assignment to local variable "a".(¥À¨ÿøÿÿÿÿ8ãˆ¦ú÷-
-isquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(µáßÆ8ãˆ¦ú÷-
-[
-squid:S106$"9Replace this use of System.out or System.err by a logger.(·ùßóýÿÿÿÿ8µË°ú÷-
-Isquid:S1068"+Remove this unused "PATTERN" private field.(ìÏí£8ßç¾´ù-
-nsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(õÛ°•ûÿÿÿÿ8ßç¾´ù-
