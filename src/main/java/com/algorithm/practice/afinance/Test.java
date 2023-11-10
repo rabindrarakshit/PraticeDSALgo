@@ -1,4 +1,4 @@
-package com.algorithm.practice.adyen;
+package com.algorithm.practice.afinance;
 
 public class Test {
     public static void main(String[] args) {

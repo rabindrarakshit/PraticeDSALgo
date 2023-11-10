@@ -1,4 +1,4 @@
-package com.algorithm.practice.adyen;
+package com.algorithm.practice.afinance;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;

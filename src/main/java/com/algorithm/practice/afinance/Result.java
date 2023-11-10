@@ -1,4 +1,4 @@
-package com.algorithm.practice.adyen;
+package com.algorithm.practice.afinance;
 
 import java.util.List;
 import java.util.TreeMap;
