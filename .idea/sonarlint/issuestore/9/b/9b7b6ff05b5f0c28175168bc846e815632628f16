@@ -1,0 +1,10 @@
+
+[
+squid:S106"9Replace this use of System.out or System.err by a logger.(ˆ´âúÿÿÿÿ8Óÿ¿‡÷-
+[
+squid:S106"9Replace this use of System.out or System.err by a logger.(ªÓ¼áşÿÿÿÿ8óÂ‡÷-
+Osquid:S1612",Replace this lambda with a method reference.(ˆ´âúÿÿÿÿ8Óÿ¿‡÷-
+isquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ä¶«Ü8åû‰ˆ÷-
+[
+squid:S106"9Replace this use of System.out or System.err by a logger.(ªÓ¼áşÿÿÿÿ8ÿöÁ‡÷-
+Xsquid:S1118":Add a private constructor to hide the implicit public one.(íäîÇ8ı½¥‡÷-

@@ -1,0 +1,104 @@
+type Query {
+  home: Container!
+  container(id: String!): Container!
+  artist(id: String!): Artist!
+  video(id: String!): Video!
+  artistSearch(query: String!, offset: Int, limit: Int): ArtistSearchResult!
+  videoSearch(query: String!, explicit: Boolean, offset: Int, limit: Int): VideoSearchResult!
+}
+
+type Mutation {
+  recordHeartbeat(interval: Int!, event: EventInput!): Boolean!
+  recordPlay(event: EventInput!): Boolean!
+  recordPause(event: EventInput!): Boolean!
+  recordNext(event: EventInput!): Boolean!
+}
+
+input EventInput {
+  videoId: String!,
+  containerId: String,
+  position: Int!,
+  anonId: String!,
+  appVersion: String!
+}
+
+type Container {
+  id: String!
+  type: String!
+  title: String!
+  privacyStatus: String!
+  description: String
+  thumbnail: String!
+  items(explicit: Boolean, offset: Int, limit: Int): [ContainerItem!]!
+  itemsCount: Int!
+  created: String!
+  updated: String!
+}
+
+type ContainerItem {
+  id: String!
+  position: Int!
+  video: Video
+  container: Container
+  created: String!
+  updated: String!
+}
+
+type Video {
+  id: String!
+  title: String!
+  thumbnail: String!
+  genre: String
+  artists: [VideoArtist!]!
+  explicit: Boolean!
+  lyricVideo: Boolean!
+  hls: String
+  dash: String
+  mp4: [Mp4Stream!]!
+  created: String
+  duration: Int!
+  copyright: String
+  copyrightYear: Int
+  label: String
+  viewCounts: ViewCounts!
+}
+
+type VideoArtist {
+ role: String!,
+ artist: Artist!
+}
+
+type Mp4Stream {
+ quality: String!
+ url: String!
+}
+
+type Artist {
+ id: String!
+ name: String!
+ thumbnail: String!
+ videos(explicit: Boolean, offset: Int, limit: Int): VideoSearchResult!
+}
+
+type ArtistSearchResult {
+ items: [Artist!]!
+ itemsCount: Int!
+}
+
+type VideoSearchResult {
+ items: [Video!]!
+ itemsCount: Int!
+}
+
+type playlistSearch{
+ query: String!
+ offset: Int
+ limit: Int
+ }
+
+type ViewCounts {
+  month: Int,
+  week: Int!,
+  day: Int!,
+  total: Int!
+}
