@@ -2,6 +2,9 @@ package com.ctci;
 
 import com.ctci.tree.Node;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Test {
     static int max = 0;
 
@@ -44,6 +47,9 @@ public class Test {
         right2.right = layer3right2;
 
         System.out.println(checkSimilar(node, node2));
+
+        Map<Integer,Integer> map = new HashMap<>();
+        map.put(-1,1);
     }
 
     public static int height(Node node) {
