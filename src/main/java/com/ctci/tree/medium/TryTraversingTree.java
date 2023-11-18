@@ -1,4 +1,4 @@
-package com.ctci.tree;
+package com.ctci.tree.medium;
 
 import java.util.LinkedList;
 

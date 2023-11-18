@@ -1,4 +1,6 @@
-package com.ctci.tree;
+package com.ctci.tree.medium;
+
+import com.ctci.tree.Node;
 
 public class CheckCustomBalancedTree {
     public static int checkBalancedTree(Node root) {

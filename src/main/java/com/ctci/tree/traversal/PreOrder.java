@@ -1,13 +1,16 @@
-package com.ctci.tree;
+package com.ctci.tree.traversal;
 
-public class PostOrder {
-    static void postOrder(Node node){
-        if(node!=null){
-            postOrder(node.left);
-            postOrder(node.right);
+import com.ctci.tree.Node;
+
+public class PreOrder {
+    static void preOrder(Node node) {
+        if (node != null) {
             System.out.println(node.data);
+            preOrder(node.left);
+            preOrder(node.right);
         }
     }
+
 
     public static void main(String[] args) {
         Node node = new Node(3);
@@ -15,6 +18,6 @@ public class PostOrder {
         Node right = new Node(2);
         node.left = left;
         node.right = right;
-        postOrder(node);
+        preOrder(node);
     }
 }

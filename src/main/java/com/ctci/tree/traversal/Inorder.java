@@ -1,4 +1,6 @@
-package com.ctci.tree;
+package com.ctci.tree.traversal;
+
+import com.ctci.tree.Node;
 
 import java.util.ArrayList;
 import java.util.List;

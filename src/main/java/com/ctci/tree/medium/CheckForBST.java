@@ -1,5 +1,7 @@
 
-package com.ctci.tree;
+package com.ctci.tree.medium;
+
+import com.ctci.tree.Node;
 
 // need to complete/check
 public class CheckForBST {

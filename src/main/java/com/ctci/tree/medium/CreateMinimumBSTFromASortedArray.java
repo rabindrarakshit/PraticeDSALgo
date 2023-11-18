@@ -1,4 +1,6 @@
-package com.ctci.tree;
+package com.ctci.tree.medium;
+
+import com.ctci.tree.Node;
 
 public class CreateMinimumBSTFromASortedArray {
     public static Node createMinimumBST(int[] arr, int start, int end){
