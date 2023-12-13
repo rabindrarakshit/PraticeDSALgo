@@ -4,7 +4,7 @@ import com.algorithm.practice.tree.Node;
 
 import java.util.Scanner;
 
-public class BST {
+public class InsertNode {
 
     public static Node insert(Node root, int data) {
         if (root == null) {
