@@ -2,6 +2,18 @@ package com.algorithm.practice.bst;
 
 import com.algorithm.practice.tree.Node;
 
+/*
+* Brute : Any Traversal * (ValidateBST at every node + traverse at valid nodes to find the elements. Return max.)
+* Time Complexity : O(n^2)
+* Space Complexity : O(1)
+*
+* Optimized:
+*
+* Time Complexity: O(n)
+* Space Complexity: O(1) avoiding recursion
+* */
+
+
 class NodeValue {
     public int maxValue, minValue, maxSize;
 
