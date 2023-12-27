@@ -2,8 +2,8 @@ package com.algorithm.practice;
 
 import com.algorithm.practice.tree.Node;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class Test {
     static int max = 0;
@@ -14,18 +14,22 @@ public class Test {
         Node right = new Node(2);
         node.left = left;
         node.right = right;
+
         Node layer2left = new Node(4);
         Node layer2right = new Node(5);
         left.left = layer2left;
         left.right = layer2right;
+
+        right.right = new Node(9);
+
         Node layer3left = new Node(6);
         layer2left.left = layer3left;
+
+
         Node layer4left = new Node(7);
         layer3left.left = layer4left;
         Node layer5left = new Node(8);
         layer4left.left = layer5left;
-        Node layer3right = new Node(9);
-        right.right = layer3right;
 
 
         Node node2 = new Node(3);
@@ -46,10 +50,7 @@ public class Test {
         Node layer3right2 = new Node(9);
         right2.right = layer3right2;
 
-        System.out.println(checkSimilar(node, node2));
-
-        Map<Integer,Integer> map = new HashMap<>();
-        map.put(-1,1);
+        levelOrder(node);
     }
 
     public static int height(Node node) {
@@ -61,7 +62,6 @@ public class Test {
         max = Math.max(max, lh + rh + node.data);
         return Math.max(lh, rh) + node.data;
     }
-
 
 
     public static boolean checkSimilar(Node node1, Node node2) {
@@ -103,6 +103,28 @@ public class Test {
             postOrder(node.left);
             System.out.println(node.data);
             postOrder(node.right);
+        }
+    }
+
+    static void levelOrder(Node node) {
+        if (node == null) {
+            return;
+        }
+        Queue<Node> q = new LinkedList<>();
+        q.offer(node);
+        int size;
+        while (!q.isEmpty()) {
+            size = q.size();
+            for (int i = 0; i < size; i++) {
+                Node polledNode = q.poll();
+                System.out.println(polledNode.data);
+                if (polledNode.left != null) {
+                    q.offer(polledNode.left);
+                }
+                if (polledNode.right != null) {
+                    q.offer(polledNode.right);
+                }
+            }
         }
     }
 
