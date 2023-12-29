@@ -1,5 +1,8 @@
 package com.algorithm.practice.sorting;
 
+// Time Complexity: O(n^2)
+// Space Complexity: O(1)
+
 public class BubbleSort {
     public static int[] bubbleSort(int[] x) {
         for(int i=0; i<x.length-1;i++){

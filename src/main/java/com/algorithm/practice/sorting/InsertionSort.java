@@ -1,5 +1,8 @@
 package com.algorithm.practice.sorting;
 
+// Time Complexity: O(n^2)
+// Space Complexity: O(1)
+
 public class InsertionSort {
     public static void sort(int[] arr) {
         for (int i = 1; i < arr.length; i++) {

@@ -1,5 +1,10 @@
 package com.algorithm.practice.sorting;
 
+// Time Complexity : O(n^2)
+// Space Complexity : O(1)
+
+// Remember swapping a hand of cards
+
 public class SelectionSort {
     public static int[] sort(int[] arr) {
         for (int i = 0; i < arr.length-1; i++) {
