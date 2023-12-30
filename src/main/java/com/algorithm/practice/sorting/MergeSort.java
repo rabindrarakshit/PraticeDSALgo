@@ -1,6 +1,8 @@
 package com.algorithm.practice.sorting;
 
-/* Java program for Merge Sort */
+// Time Complexity: O(log(n))
+// Space Complexity: O(n)
+
 public class MergeSort {
     public static void mergeSort(int[] arr, int begin, int end) {
         if (begin < end) {
@@ -41,7 +43,6 @@ public class MergeSort {
         System.out.println();
     }
 
-    // Driver code
     public static void main(String args[]) {
         int arr[] = {12, 11, 13, 5, 6, 7};
         mergeSort(arr, 0, arr.length - 1);
@@ -49,4 +50,3 @@ public class MergeSort {
         printArray(arr);
     }
 }
-/* This code is contributed by Rajat Mishra */
