@@ -1,6 +1,6 @@
 package com.algorithm.practice.sorting;
 
-// Time Complexity: O(log(n))
+// Time Complexity: O(nlog(n))
 // Space Complexity: O(n)
 
 public class MergeSort {
@@ -14,7 +14,7 @@ public class MergeSort {
     }
 
     public static void combine(int[] arr, int begin, int mid, int end) {
-        int sorted[] = new int[end - begin + 1];
+        int[] sorted = new int[end - begin + 1];
         int idx1 = begin;
         int idx2 = mid + 1;
         int k = 0;
@@ -36,15 +36,13 @@ public class MergeSort {
         }
     }
 
-    static void printArray(int arr[]) {
-        int n = arr.length;
-        for (int i = 0; i < n; ++i)
+    static void printArray(int[] arr) {
+        for (int i : arr)
             System.out.print(arr[i] + " ");
-        System.out.println();
     }
 
-    public static void main(String args[]) {
-        int arr[] = {12, 11, 13, 5, 6, 7};
+    public static void main(String[] args) {
+        int[] arr = {12, 11, 13, 5, 6, 7};
         mergeSort(arr, 0, arr.length - 1);
         System.out.println("Sorted array: ");
         printArray(arr);
