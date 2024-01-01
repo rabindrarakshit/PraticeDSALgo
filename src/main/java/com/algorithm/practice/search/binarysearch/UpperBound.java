@@ -11,7 +11,7 @@ public class UpperBound {
         int high = arr.length - 1;
         while (low <= high) {
             int mid = low + (high - low) / 2;
-            if (arr[mid] > num && mid < upperBound) {
+            if (arr[mid] > num) {
                 upperBound = mid;
                 high = mid - 1;
             } else {

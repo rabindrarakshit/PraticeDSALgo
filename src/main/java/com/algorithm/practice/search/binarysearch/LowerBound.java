@@ -11,7 +11,7 @@ public class LowerBound {
         int high = arr.length - 1;
         while (low <= high) {
             int mid = low + (high - low) / 2;
-            if (arr[mid] >= num && mid < lowerBound) {
+            if (arr[mid] >= num) {
                 lowerBound = mid;
                 high = mid - 1;
             } else {
