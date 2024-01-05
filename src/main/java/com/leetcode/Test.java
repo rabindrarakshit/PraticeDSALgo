@@ -169,16 +169,6 @@ class Test {
         }
     }
 
-    public static int removeDuplicates1(int[] arr) {
-        int count = 1;
-        for (int i = 1; i < arr.length; i++) {
-            if (arr[i - 1] != arr[i]) {
-                arr[count++] = arr[i];
-            }
-        }
-        return count;
-    }
-
     public static void duplicateZeros(int[] arr) {
         int possibleDups = 0;
         int length_ = arr.length - 1;
@@ -306,23 +296,6 @@ class Test {
                 arr[j] = arr[j] + arr[j - 1];
 
         return Arrays.asList(arr);
-    }
-
-    public static void rotate(int[] nums, int k) {
-        k = k % nums.length;
-        reverse(nums, 0, nums.length - 1);
-        reverse(nums, 0, k);
-        reverse(nums, k + 1, nums.length - 1);
-    }
-
-    public static void reverse(int[] nums, int begin, int end) {
-        while (begin < end) {
-            int temp = nums[begin];
-            nums[begin] = nums[end];
-            nums[end] = temp;
-            begin++;
-            end--;
-        }
     }
 
     public static int minSubArrayLen(int target, int[] nums) {
@@ -596,17 +569,6 @@ class Test {
         }
         arr[i - 1] = -1;
         return arr;
-    }
-
-    public static void removeDuplicates(int[] nums) {
-        int j = 1;
-        for (int i = 0; i < nums.length - 1; i++) {
-            if (nums[i] != nums[i + 1]) {
-                nums[j] = nums[i + 1];
-                j++;
-            }
-        }
-        System.out.println(j);
     }
 
     public static void backTrack(StringBuilder path, int index) {
