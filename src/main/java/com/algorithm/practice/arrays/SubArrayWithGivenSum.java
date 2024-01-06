@@ -1,49 +1,102 @@
 package com.algorithm.practice.arrays;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class SubArrayWithGivenSum {
 
     //Brute Force
-    static void subArraySum(int[] arr, int n, int sum)
-    {
-       for(int i=0; i<n;i++){
-           int curr_sum = arr[i];
-           if(curr_sum == sum){
-               System.out.println("Found the sum at index: "+i);
-               return;
-           }
-           for(int j=i+1; j<n; j++){
-                curr_sum = curr_sum + arr[j];
-               if(curr_sum == sum){
-                   System.out.println("Found the sum between index: "+i+ " and "+j);
-                   return;
-               }
-               if(curr_sum>sum){
-                   break;
-               }
-           }
-       }
-        System.out.println("Not found!!");
+    public static void main(String[] args) {
+        for (int i : subArrayWithGivenSumTwoPointer(new int[]{1, 2, 3, 4, 5}, 5)) {
+            System.out.print(i + " ");
+        }
+        System.out.println();
+        for (int i : subArrayWithGivenSum(new int[]{1, 2, 3, 4, 5}, 5)) {
+            System.out.print(i + " ");
+        }
+        System.out.println();
+        for (int i : subArrayWithGivenSumHashMap(new int[]{1, 2, 3, 4, 5}, 5)) {
+            System.out.print(i + " ");
+        }
     }
 
-    static void optimizedSubArraySum(int[] arr, int n, int sum){
-        int curr_sum=arr[0], start=0;
-        for(int i=1; i<=n;i++){
-            while (curr_sum>sum && start<i-1){
-                curr_sum= curr_sum - arr[start];
-                start++;
-            }
-            if(curr_sum==sum){
-                System.out.println("Found between index: "+start+" and "+ (i-1));
-                return;
-            }
-            if(i<n){
-                curr_sum= curr_sum+arr[i];
+    static int[] subArrayWithGivenSum(int[] arr, int k) {
+        int maxLength = 0;
+        int[] result = new int[2];
+        for (int i = 0; i < arr.length; i++) {
+            int sum = 0;
+            for (int j = i; j < arr.length; j++) {
+                sum = sum + arr[j];
+                if (sum == k) {
+                    if (maxLength < (j - i + 1)) {
+                        maxLength = j - i + 1;
+                        result[0] = i;
+                        result[1] = j;
+                    }
+                }
             }
         }
-        System.out.println("Not found!!");
+        return result;
     }
 
-    public static void main(String[] args) {
-        optimizedSubArraySum(new int[]{1,2,3,5}, 4, 8);
+    static int[] subArrayWithGivenSumTwoPointer(int[] a, int k) {
+        int n = a.length; // size of the array.
+
+        int left = 0, right = 0; // 2 pointers
+        long sum = a[0];
+        int maxLen = 0;
+        int[] result = new int[2];
+        while (right < n) {
+            // if sum > k, reduce the subarray from left
+            // until sum becomes less or equal to k:
+            while (left <= right && sum > k) {
+                sum -= a[left];
+                left++;
+            }
+
+            // if sum = k, update the maxLen i.e. answer:
+            if (sum == k) {
+                if (maxLen < right - left + 1) {
+                    result[0] = left;
+                    result[1] = right;
+                }
+                maxLen = Math.max(maxLen, right - left + 1);
+            }
+
+            // Move forward thw right pointer:
+            right++;
+            if (right < n) sum += a[right];
+        }
+
+        return result;
+    }
+
+    static int[] subArrayWithGivenSumHashMap(int[] arr, int k) {
+        Map<Integer, Integer> prefixSumMap = new HashMap<>();
+        int sum = 0;
+        int maxLength = 0;
+        int[] result = new int[2];
+
+        for (int i = 0; i < arr.length; i++) {
+            sum += arr[i];
+            if (sum == k) {
+                if (maxLength < i) {
+                    result[0] = 0;
+                    result[1] = i;
+                }
+                maxLength = Math.max(maxLength, i);
+            }
+            if (prefixSumMap.containsKey(sum - k)) {
+                if (maxLength < (i - prefixSumMap.get(sum - k) + 1)) {
+                    result[0] = prefixSumMap.get(sum - k) + 1;
+                    result[1] = i;
+                }
+                maxLength = Math.max(maxLength, i - prefixSumMap.get(sum - k) + 1);
+            }
+            if (!prefixSumMap.containsKey(sum)) {
+                prefixSumMap.put(sum, i);
+            }
+        }
+        return result;
     }
 }
