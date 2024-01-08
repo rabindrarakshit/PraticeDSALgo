@@ -1,9 +1,9 @@
-package com.algorithm.practice.arrays;
+package com.algorithm.practice.arrays.easy;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class SubArrayWithGivenSum {
+public class LongestSubArrayWithGivenSum {
 
     //Brute Force
     public static void main(String[] args) {
@@ -20,6 +20,7 @@ public class SubArrayWithGivenSum {
         }
     }
 
+    // Naive
     static int[] subArrayWithGivenSum(int[] arr, int k) {
         int maxLength = 0;
         int[] result = new int[2];
@@ -38,6 +39,8 @@ public class SubArrayWithGivenSum {
         }
         return result;
     }
+
+    // This algo is not applicable when there are negative elements in the array
 
     static int[] subArrayWithGivenSumTwoPointer(int[] a, int k) {
         int n = a.length; // size of the array.
@@ -70,6 +73,7 @@ public class SubArrayWithGivenSum {
 
         return result;
     }
+
 
     static int[] subArrayWithGivenSumHashMap(int[] arr, int k) {
         Map<Integer, Integer> prefixSumMap = new HashMap<>();

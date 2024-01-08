@@ -5,7 +5,7 @@ package com.algorithm.practice.sorting;
 
 class QuickSort {
     public static void main(String[] args) {
-        int[] input = new int[]{4, 3, 2, 1};
+        int[] input = new int[]{5,4, 3, 2, 1};
         quickSort(input);
         for (int i : input) {
             System.out.println(i);

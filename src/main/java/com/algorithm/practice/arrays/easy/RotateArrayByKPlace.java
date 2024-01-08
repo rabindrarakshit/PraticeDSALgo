@@ -1,4 +1,4 @@
-package com.algorithm.practice.arrays;
+package com.algorithm.practice.arrays.easy;
 
 // Right Rotation
 // Time Complexity: O(N)

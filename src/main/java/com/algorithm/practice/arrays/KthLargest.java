@@ -3,12 +3,12 @@ package com.algorithm.practice.arrays;
 public class KthLargest {
     public static int findKthLargest(int[] nums, int k) {
         k = nums.length - k;
-      //  k=k-1;
+        //  k=k-1;
         int lo = 0;
         int hi = nums.length - 1;
         while (lo < hi) {
             final int j = partition(nums, lo, hi);
-            if(j < k) {
+            if (j < k) {
                 lo = j + 1;
             } else if (j > k) {
                 hi = j - 1;
@@ -32,13 +32,13 @@ public class KthLargest {
         return i;
     }
 
-    private static void swap(int[] nums, int i, int hi){
+    private static void swap(int[] nums, int i, int hi) {
         int temp = nums[i];
         nums[i] = nums[hi];
         nums[hi] = temp;
     }
 
     public static void main(String[] args) {
-        System.out.println(findKthLargest(new int[]{1,2,3,4,5,6,7}, 3));
+        System.out.println(findKthLargest(new int[]{1, 2, 3, 4, 5, 6, 7}, 3));
     }
 }

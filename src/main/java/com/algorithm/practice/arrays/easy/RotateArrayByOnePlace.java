@@ -1,4 +1,4 @@
-package com.algorithm.practice.arrays;
+package com.algorithm.practice.arrays.easy;
 
 public class RotateArrayByOnePlace {
     static void rotate(int[] arr){

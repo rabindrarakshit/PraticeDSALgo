@@ -1,4 +1,4 @@
-package com.algorithm.practice.arrays;
+package com.algorithm.practice.arrays.easy;
 
 public class MissingElementUnsortedArray {
     static int missingElement(int[] arr, int n) {

@@ -1,15 +1,13 @@
 package com.algorithm.practice.test;
 
 import javax.ws.rs.InternalServerErrorException;
-import java.io.DataOutputStream;
-import java.net.Socket;
-import java.util.Collection;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class Test1 {
+public class TestExceptionLogFormat {
 
-    private static final Logger LOG = LoggerFactory.getLogger(Test1.class);
+    private static final Logger LOG = LoggerFactory.getLogger(TestExceptionLogFormat.class);
 
     public static void main(String[] args) throws Exception {
         try{throwException();}
