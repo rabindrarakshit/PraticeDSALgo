@@ -1,4 +1,4 @@
-package com.algorithm.practice.arrays;
+package com.algorithm.practice.arrays.medium;
 
 public class StockBuyAndSell {
     public static int maximumProfit(int[] arr) {

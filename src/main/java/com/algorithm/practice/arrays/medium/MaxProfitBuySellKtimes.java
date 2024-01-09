@@ -1,4 +1,4 @@
-package com.algorithm.practice.arrays;
+package com.algorithm.practice.arrays.medium;
 
 public class MaxProfitBuySellKtimes {
     static int maxProfit(int price[],
