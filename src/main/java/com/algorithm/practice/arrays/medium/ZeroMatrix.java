@@ -1,4 +1,11 @@
-package com.algorithm.practice.arrays;
+package com.algorithm.practice.arrays.medium;
+
+// Problem Statement: Given a matrix if an element in the matrix is 0 then you will have to set its entire
+// column and row to 0 and then return the matrix.
+// https://takeuforward.org/data-structure/set-matrix-zero/
+
+// Time Complexity: O(3MN) +O(M) +O(N)
+// Space Complexity: O(1)
 
 public class ZeroMatrix {
     public static void setZeroes(int[][] input){
@@ -6,15 +13,15 @@ public class ZeroMatrix {
         boolean firstColumnHasZero = false;
 
         for(int i=0;i<input.length;i++){
-            if(input[0][i]==0){
-                firstRowHasZero = true;
+            if(input[i][0]==0){
+                firstColumnHasZero = true;
                 break;
             }
         }
 
         for(int i=0;i<input[0].length;i++){
-            if(input[i][0]==0){
-                firstColumnHasZero = true;
+            if(input[0][i]==0){
+                firstRowHasZero = true;
                 break;
             }
         }
@@ -73,13 +80,14 @@ public class ZeroMatrix {
     public static void printMatrices(int[][] input) {
         for (int i = 0; i < input.length; i++) {
             for (int j = 0; j < input[0].length; j++) {
-                System.out.println(input[i][j]);
+                System.out.print(input[i][j]+" ");
             }
+            System.out.println();
         }
     }
 
     public static void main(String[] args) {
-        int[][] input = new int[3][3];
+        int[][] input = new int[4][3];
         fillMatrices(input);
         input[1][1]=0;
         setZeroes(input);

@@ -1,4 +1,4 @@
-package com.algorithm.practice.arrays;
+package com.algorithm.practice.arrays.easy;
 
 public class ReverseColumns {
     public static void reverseColumns(int[][] arr){

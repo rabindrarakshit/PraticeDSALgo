@@ -1,4 +1,4 @@
-package com.algorithm.practice.arrays;
+package com.algorithm.practice.arrays.easy;
 
 public class Reverse {
     public static void reverse(int[] arr, int start, int end) {

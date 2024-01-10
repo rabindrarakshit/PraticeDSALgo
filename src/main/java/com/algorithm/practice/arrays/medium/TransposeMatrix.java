@@ -1,4 +1,4 @@
-package com.algorithm.practice.arrays;
+package com.algorithm.practice.arrays.medium;
 
 public class TransposeMatrix {
     public static void transpose(int[][] arr){
