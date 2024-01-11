@@ -1,7 +1,19 @@
 package com.algorithm.practice.arrays.medium;
 
 public class RotateMatrix {
-    public static void rotateMatrix(int[][] input) {
+    // This is for clock wise rotation, if we need anti-clock then we just do transpose and then reverse columns
+    static void rotateByTransposeAndReverseApproach(int[][] arr){
+        TransposeMatrix.transpose(arr);
+        for(int i=0;i<arr.length;i++){
+            for(int j=0;j<arr[0].length/2;j++){
+                int temp = arr[i][j];
+                arr[i][j] = arr[i][arr[0].length-j-1];
+                arr[i][arr[0].length-j-1] = temp;
+            }
+        }
+    }
+
+    public static void rotateMatrixByLevelsApproach(int[][] input) {
         if (input.length != input[0].length) {
             return;
         }
@@ -27,8 +39,9 @@ public class RotateMatrix {
     public static void printMatrices(int[][] input) {
         for (int i = 0; i < input.length; i++) {
             for (int j = 0; j < input[0].length; j++) {
-                System.out.println(input[i][j]);
+                System.out.print(input[i][j]+" ");
             }
+            System.out.println();
         }
     }
 
@@ -45,7 +58,7 @@ public class RotateMatrix {
     public static void main(String[] args) {
         int[][] input = new int[3][3];
         fillMatrices(input);
-        rotateMatrix(input);
+        rotateByTransposeAndReverseApproach(input);
         printMatrices(input);
     }
 }
