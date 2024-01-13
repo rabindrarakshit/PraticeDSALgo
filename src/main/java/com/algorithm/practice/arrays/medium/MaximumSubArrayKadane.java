@@ -1,5 +1,10 @@
 package com.algorithm.practice.arrays.medium;
 
+// Problem Statement: Given an integer array arr, find the contiguous subarray (containing at least one number) which
+// has the largest sum and returns its sum and prints the subarray.
+
+// https://takeuforward.org/data-structure/kadanes-algorithm-maximum-subarray-sum-in-an-array/
+
 public class
 MaximumSubArrayKadane {
 
@@ -7,7 +12,7 @@ MaximumSubArrayKadane {
     static int maxSubArrayKadane(int[] arr){
         int max_ending_here = Integer.MIN_VALUE;
         int max_so_far = 0;
-        int start = 0, end = 0, s = 0;
+        int start = 0, end = 0;
         for(int i=0; i<arr.length; i++){
             max_ending_here = max_ending_here +arr[i];
             if(max_ending_here>max_so_far){
