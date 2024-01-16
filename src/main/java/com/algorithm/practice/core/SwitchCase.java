@@ -1,8 +1,6 @@
-package com.algorithm.practice.string;
+package com.algorithm.practice.core;
 
-import java.util.Hashtable;
-
-public class TestString {
+public class SwitchCase {
     public static void main(String[] args) {
         System.out.println(check());
     }
