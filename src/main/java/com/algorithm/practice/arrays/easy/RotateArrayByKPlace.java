@@ -1,13 +1,13 @@
 package com.algorithm.practice.arrays.easy;
 
-// Right Rotation
+// Left Rotation
 // Time Complexity: O(N)
 // Space Complexity: O(1)
 
 public class RotateArrayByKPlace {
     static void rotate(int[] arr, int k) {
-        reverse(k - 1, arr.length - 1, arr);
-        reverse(0, k - 2, arr);
+        reverse(k, arr.length - 1, arr);
+        reverse(0, k - 1, arr);
         reverse(0, arr.length - 1, arr);
     }
 

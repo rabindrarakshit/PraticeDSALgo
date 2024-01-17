@@ -1,4 +1,4 @@
-package com.algorithm.practice.string;
+package com.algorithm.practice.string.easy;
 
 // Ref: https://takeuforward.org/data-structure/reverse-words-in-a-string/
 

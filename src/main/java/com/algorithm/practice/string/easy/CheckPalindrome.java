@@ -1,4 +1,4 @@
-package com.algorithm.practice.string;
+package com.algorithm.practice.string.easy;
 
 public class CheckPalindrome {
     static boolean checkPalindrome(String s, int front, int back) {

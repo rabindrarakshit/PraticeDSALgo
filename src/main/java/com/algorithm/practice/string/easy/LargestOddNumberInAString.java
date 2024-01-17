@@ -1,4 +1,4 @@
-package com.algorithm.practice.string;
+package com.algorithm.practice.string.easy;
 
 public class LargestOddNumberInAString {
     static String largestOddNumber(String num) {

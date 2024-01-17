@@ -1,4 +1,4 @@
-package com.algorithm.practice.string;
+package com.algorithm.practice.string.easy;
 
 import java.util.HashMap;
 import java.util.Map;

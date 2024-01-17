@@ -1,4 +1,4 @@
-package com.algorithm.practice.string;
+package com.algorithm.practice.string.easy;
 
 // Ref: https://leetcode.com/problems/remove-outermost-parentheses/
 // Input: s = "()()"

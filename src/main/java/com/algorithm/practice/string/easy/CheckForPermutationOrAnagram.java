@@ -1,6 +1,6 @@
-package com.algorithm.practice.arrays;
+package com.algorithm.practice.string.easy;
 
-public class CheckForPermutation {
+public class CheckForPermutationOrAnagram {
     public static Boolean checkByIndexArray(String str1, String str2){
         Boolean isPermutation = true;
         char[] inputString = str1.toCharArray();
