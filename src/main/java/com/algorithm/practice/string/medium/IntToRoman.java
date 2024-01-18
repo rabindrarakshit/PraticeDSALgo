@@ -1,4 +1,4 @@
-package com.algorithm.practice.arrays;
+package com.algorithm.practice.string.medium;
 
 public class IntToRoman {
     public static String intToRoman(int num) {

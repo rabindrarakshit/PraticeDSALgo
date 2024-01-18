@@ -1,4 +1,4 @@
-package com.algorithm.practice.arrays;
+package com.algorithm.practice.string.medium;
 
 public class SumOfTwoRoman {
     public static void main(String[] args) {

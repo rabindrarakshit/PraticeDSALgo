@@ -1,8 +1,8 @@
-package com.algorithm.practice.arrays;
+package com.algorithm.practice.string.medium;
 
 public class RomanToInt {
     public static int romanToInt(String s) {
-        int nums[]=new int[s.length()];
+        int[] nums=new int[s.length()];
         for(int i=0;i<s.length();i++){
             switch (s.charAt(i)){
                 case 'M':
