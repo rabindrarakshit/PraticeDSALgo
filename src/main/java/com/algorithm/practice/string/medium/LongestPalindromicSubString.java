@@ -1,13 +1,19 @@
 package com.algorithm.practice.string.medium;
 
+// Ref: https://leetcode.com/problems/longest-palindromic-substring/description/
+// Input: s = "babad"
+// Output: "bab"
 public class LongestPalindromicSubString {
-    private static String longestNaive(String str){
+
+    // Time Complexity: O(n^3)
+    // Space Complexity : O(1)
+    private static String longestNaive(String str) {
         String result = null;
         int maxLength = 0;
-        for(int i=0;i<str.length();i++){
-            for(int j=i+1;j<str.length();j++){
-                String subStr = str.substring(i,j+1);
-                if(isPalindrome(subStr) && subStr.length()>maxLength){
+        for (int i = 0; i < str.length(); i++) {
+            for (int j = i + 1; j < str.length(); j++) {
+                String subStr = str.substring(i, j + 1);
+                if (isPalindrome(subStr) && subStr.length() > maxLength) {
                     maxLength = subStr.length();
                     result = subStr;
                 }
@@ -16,12 +22,12 @@ public class LongestPalindromicSubString {
         return result;
     }
 
-    private static boolean isPalindrome(String str){
-        int left =0;
-        int right = str.length()-1;
+    private static boolean isPalindrome(String str) {
+        int left = 0;
+        int right = str.length() - 1;
 
-        while(left<=right){
-            if(str.charAt(left)!=str.charAt(right)){
+        while (left <= right) {
+            if (str.charAt(left) != str.charAt(right)) {
                 return false;
             }
             left++;
