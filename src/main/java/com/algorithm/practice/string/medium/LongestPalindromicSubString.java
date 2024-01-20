@@ -67,11 +67,31 @@ public class LongestPalindromicSubString {
         return true;
     }
 
+    private static String maxPalindromeSubStrDP(String str) {
+        int n = str.length();
+        int maxLength = 0;
+        int start = 0;
+        boolean dp[][] = new boolean[n][n];
+        for (int i = n - 1; i >= 0; i--) {
+            for (int j = i; j < n; j++) {
+                dp[i][j] = str.charAt(i) == str.charAt(j) && (j - i < 3 || dp[i - 1][j + 1]);
+                if (dp[i][j] && (j - i + 1 > maxLength)) {
+                    maxLength = j - i + 1;
+                    start = i;
+                }
+            }
+        }
+        return str.substring(start, start + maxLength);
+    }
+
     public static void main(String[] args) {
         System.out.println(longestNaive("ababc"));
         System.out.println(longestNaive("abc"));
 
         System.out.println(longestExpandFromCenter("ababc"));
         System.out.println(longestExpandFromCenter("abc"));
+
+        System.out.println(maxPalindromeSubStrDP("ababc"));
+        System.out.println(maxPalindromeSubStrDP("abc"));
     }
 }
