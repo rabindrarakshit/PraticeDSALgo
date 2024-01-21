@@ -1,12 +1,10 @@
 package com.algorithm.practice.linkedlist;
 
-import javax.ws.rs.core.Link;
-
-public class LinkedList {
+public class CustomLinkedListImplementation {
     static Node head;
     static int size;
 
-    public LinkedList() {
+    public CustomLinkedListImplementation() {
         this.size = 0;
     }
 
