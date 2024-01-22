@@ -147,56 +147,56 @@ public class CustomLinkedListImplementation {
     }
 
     public static Node reverseRecursive(Node head) {
-        if(head==null || head.next==null){
-           return head;
+        if (head == null || head.next == null) {
+            return head;
         }
-      Node newHead =  reverseRecursive(head.next);
-      head.next.next = head;
-      head.next = null;
-      return newHead;
+        Node newHead = reverseRecursive(head.next);
+        head.next.next = head;
+        head.next = null;
+        return newHead;
     }
 
-    public static Node deleteNthNodeFromLast(Node head, int n){
+    public static Node deleteNthNodeFromLast(Node head, int n) {
         // We consider here n is always valid
-        if(head==null && head.next==null){
+        if (head == null && head.next == null) {
             return null;
         }
         Node currentNode = head;
-        int size=0;
-        while(currentNode!=null){
+        int size = 0;
+        while (currentNode != null) {
             size++;
             currentNode = currentNode.next;
         }
-        int searchIndex = size-n;
-        int i=1;
+        int searchIndex = size - n;
+        int i = 1;
         Node previousNode = head;
-        while(i<searchIndex){
+        while (i < searchIndex) {
             i++;
-            previousNode= previousNode.next;
+            previousNode = previousNode.next;
         }
         previousNode.next = previousNode.next.next;
         return head;
     }
 
-    public static Node findMiddle(){
+    public static Node findMiddle() {
         Node slow = head;
         Node fast = head;
         // Hare-Tortoise Algo to find middle
-        while(fast.next!=null && fast.next.next!=null){
+        while (fast.next != null && fast.next.next != null) {
             slow = slow.next;
             fast = fast.next.next;
         }
         return slow;
     }
 
-    public static boolean checkForPalindrome(){
+    public static boolean checkForPalindrome() {
         Node middle = findMiddle();
         Node secondHead = reverseFromRandom(middle.next);
 
         Node firstPointer = head;
         Node secondPointer = secondHead;
-        while(secondPointer!=null){
-            if(firstPointer.data!=secondPointer.data){
+        while (secondPointer != null) {
+            if (firstPointer.data != secondPointer.data) {
                 return false;
             }
             firstPointer = firstPointer.next;
@@ -205,18 +205,18 @@ public class CustomLinkedListImplementation {
         return true;
     }
 
-    public static boolean detectLoop(){
+    public static boolean detectLoop() {
         Node fast = head;
         Node slow = head;
 
-        if(head==null){
+        if (head == null) {
             return false;
         }
 
-        while(fast!=null && fast.next!=null){
+        while (fast != null && fast.next != null) {
             fast = fast.next.next;
             slow = slow.next;
-            if(fast==slow){
+            if (fast == slow) {
                 return true;
             }
         }
@@ -225,14 +225,14 @@ public class CustomLinkedListImplementation {
 
 
     public static void main(String[] args) {
-       head = new Node(1);
-       Node n2 = new Node(2);
-       Node n3 = new Node(3);
-       Node n4 = new Node(4);
-       head.next = n2;
-       n2.next = n3;
-       n3.next = n4;
-       n4.next = n2;
+        head = new Node(1);
+        Node n2 = new Node(2);
+        Node n3 = new Node(3);
+        Node n4 = new Node(4);
+        head.next = n2;
+        n2.next = n3;
+        n3.next = n4;
+        n4.next = n2;
         System.out.println(detectLoop());
     }
 }
