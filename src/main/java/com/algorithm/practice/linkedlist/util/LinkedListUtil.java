@@ -1,21 +1,11 @@
 package com.algorithm.practice.linkedlist.util;
 
+import com.algorithm.practice.linkedlist.LinkedListNode;
+
 public class LinkedListUtil {
-    public static String test_static = "";
-
-    public static class Node {
-        public int data;
-        public Node next;
-
-        public Node(int data) {
-            this.data = data;
-            this.next = null;
-        }
-    }
-
-    public static void printLinkedList(Node node) {
+    public static void printLinkedList(LinkedListNode node) {
         while (node != null) {
-            System.out.print("\n" + node.data + " ");
+            System.out.print(node.data + " ");
             node = node.next;
         }
     }

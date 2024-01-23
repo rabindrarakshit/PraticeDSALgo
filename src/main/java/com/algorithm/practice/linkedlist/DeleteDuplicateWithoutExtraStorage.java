@@ -3,9 +3,9 @@ package com.algorithm.practice.linkedlist;
 import static com.algorithm.practice.linkedlist.util.LinkedListUtil.*;
 
 public class DeleteDuplicateWithoutExtraStorage {
-    public static void deleteDuplicates(Node node) {
-        Node current = node;
-        Node runner;
+    public static void deleteDuplicates(LinkedListNode node) {
+        LinkedListNode current = node;
+        LinkedListNode runner;
         while (current != null) {
             runner = current;
             while (runner.next != null) {
@@ -24,10 +24,10 @@ public class DeleteDuplicateWithoutExtraStorage {
     }
 
     public static void main(String[] args) {
-        Node n1 = new Node(1);
-        Node n2 = new Node(1);
-        Node n3 = new Node(2);
-        Node n4 = new Node(3);
+        LinkedListNode n1 = new LinkedListNode(1);
+        LinkedListNode n2 = new LinkedListNode(1);
+        LinkedListNode n3 = new LinkedListNode(2);
+        LinkedListNode n4 = new LinkedListNode(3);
         n1.next = n2;
         n2.next = n3;
         n3.next = n4;

@@ -1,26 +1,18 @@
 package com.algorithm.practice.linkedlist;
 
 public class CustomLinkedListImplementation {
-    static Node head;
+    static LinkedListNode head;
     static int size;
 
     public CustomLinkedListImplementation() {
         this.size = 0;
     }
 
-    public static class Node {
-        int data;
-        Node next;
 
-        public Node(int data) {
-            this.data = data;
-            this.next = null;
-        }
-    }
 
     public static void addFirst(int data) {
         size++;
-        Node node = new Node(data);
+        LinkedListNode node = new LinkedListNode(data);
         if (head == null) {
             head = node;
             return;
@@ -31,12 +23,12 @@ public class CustomLinkedListImplementation {
 
     public static void addLast(int data) {
         size++;
-        Node node = new Node(data);
+        LinkedListNode node = new LinkedListNode(data);
         if (head == null) {
             head = node;
             return;
         }
-        Node currentNode = head;
+        LinkedListNode currentNode = head;
         while (currentNode.next != null) {
             currentNode = currentNode.next;
         }
@@ -47,7 +39,7 @@ public class CustomLinkedListImplementation {
         if (head == null) {
             System.out.println("List is empty!!");
         }
-        Node currentNode = head;
+        LinkedListNode currentNode = head;
         while (currentNode != null) {
             System.out.print(currentNode.data + "->");
             currentNode = currentNode.next;
@@ -72,8 +64,8 @@ public class CustomLinkedListImplementation {
             head = null;
             return;
         }
-        Node lastNode = head.next;
-        Node secondLastNode = head;
+        LinkedListNode lastNode = head.next;
+        LinkedListNode secondLastNode = head;
         while (lastNode.next != null) {
             lastNode = lastNode.next;
             secondLastNode = secondLastNode.next;
@@ -95,8 +87,8 @@ public class CustomLinkedListImplementation {
             head = null;
         }
         int i = 1;
-        Node lastNode = head.next;
-        Node secondLastNode = head;
+        LinkedListNode lastNode = head.next;
+        LinkedListNode secondLastNode = head;
         while (lastNode != null) {
             if (i == index) {
                 size--;
@@ -110,14 +102,14 @@ public class CustomLinkedListImplementation {
         System.out.println("No elements at the provided index!");
     }
 
-    public static Node reverseListIterative() {
+    public static LinkedListNode reverseListIterative() {
         if (head == null || head.next == null) {
             return head;
         }
-        Node current = head;
-        Node previous = null;
+        LinkedListNode current = head;
+        LinkedListNode previous = null;
         while (current != null) {
-            Node next = current.next;
+            LinkedListNode next = current.next;
             current.next = previous;
 
             previous = current;
@@ -128,14 +120,14 @@ public class CustomLinkedListImplementation {
         return head;
     }
 
-    public static Node reverseFromRandom(Node head) {
+    public static LinkedListNode reverseFromRandom(LinkedListNode head) {
         if (head == null || head.next == null) {
             return head;
         }
-        Node current = head;
-        Node previous = null;
+        LinkedListNode current = head;
+        LinkedListNode previous = null;
         while (current != null) {
-            Node next = current.next;
+            LinkedListNode next = current.next;
             current.next = previous;
 
             previous = current;
@@ -146,22 +138,22 @@ public class CustomLinkedListImplementation {
         return head;
     }
 
-    public static Node reverseRecursive(Node head) {
+    public static LinkedListNode reverseRecursive(LinkedListNode head) {
         if (head == null || head.next == null) {
             return head;
         }
-        Node newHead = reverseRecursive(head.next);
+        LinkedListNode newHead = reverseRecursive(head.next);
         head.next.next = head;
         head.next = null;
         return newHead;
     }
 
-    public static Node deleteNthNodeFromLast(Node head, int n) {
+    public static LinkedListNode deleteNthNodeFromLast(LinkedListNode head, int n) {
         // We consider here n is always valid
         if (head == null && head.next == null) {
             return null;
         }
-        Node currentNode = head;
+        LinkedListNode currentNode = head;
         int size = 0;
         while (currentNode != null) {
             size++;
@@ -169,7 +161,7 @@ public class CustomLinkedListImplementation {
         }
         int searchIndex = size - n;
         int i = 1;
-        Node previousNode = head;
+        LinkedListNode previousNode = head;
         while (i < searchIndex) {
             i++;
             previousNode = previousNode.next;
@@ -178,23 +170,12 @@ public class CustomLinkedListImplementation {
         return head;
     }
 
-    public static Node findMiddle() {
-        Node slow = head;
-        Node fast = head;
-        // Hare-Tortoise Algo to find middle
-        while (fast.next != null && fast.next.next != null) {
-            slow = slow.next;
-            fast = fast.next.next;
-        }
-        return slow;
-    }
-
     public static boolean checkForPalindrome() {
-        Node middle = findMiddle();
-        Node secondHead = reverseFromRandom(middle.next);
+        LinkedListNode middle = MiddleOfLinkedList.middle(head);
+        LinkedListNode secondHead = reverseFromRandom(middle.next);
 
-        Node firstPointer = head;
-        Node secondPointer = secondHead;
+        LinkedListNode firstPointer = head;
+        LinkedListNode secondPointer = secondHead;
         while (secondPointer != null) {
             if (firstPointer.data != secondPointer.data) {
                 return false;
@@ -206,8 +187,8 @@ public class CustomLinkedListImplementation {
     }
 
     public static boolean detectLoop() {
-        Node fast = head;
-        Node slow = head;
+        LinkedListNode fast = head;
+        LinkedListNode slow = head;
 
         if (head == null) {
             return false;
@@ -225,10 +206,10 @@ public class CustomLinkedListImplementation {
 
 
     public static void main(String[] args) {
-        head = new Node(1);
-        Node n2 = new Node(2);
-        Node n3 = new Node(3);
-        Node n4 = new Node(4);
+        head = new LinkedListNode(1);
+        LinkedListNode n2 = new LinkedListNode(2);
+        LinkedListNode n3 = new LinkedListNode(3);
+        LinkedListNode n4 = new LinkedListNode(4);
         head.next = n2;
         n2.next = n3;
         n3.next = n4;

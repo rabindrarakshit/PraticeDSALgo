@@ -1,6 +1,6 @@
 package com.algorithm.practice.linkedlist;
 
-public class DoubleLinkedListInsertion {
+public class DoubleLinkedListOperations {
     static DoubleLinkedListNode insertEnd(DoubleLinkedListNode head, int data) {
         DoubleLinkedListNode current = head;
         while (current.next != null) {

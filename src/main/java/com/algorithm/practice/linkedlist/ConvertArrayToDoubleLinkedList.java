@@ -14,6 +14,6 @@ public class ConvertArrayToDoubleLinkedList {
 
     public static void main(String[] args) {
         DoubleLinkedListNode head = convert(new int[]{1,2,3,4});
-        DoubleLinkedListInsertion.printDoubleLinkedList(head);
+        DoubleLinkedListOperations.printDoubleLinkedList(head);
     }
 }
