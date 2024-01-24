@@ -1,4 +1,4 @@
-package com.algorithm.practice.linkedlist.util;
+package com.algorithm.practice.linkedlist;
 
 public class LinkedListNodeCTCI {
 	public LinkedListNodeCTCI next;

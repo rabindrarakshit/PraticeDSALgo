@@ -3,7 +3,7 @@ package com.algorithm.practice.linkedlist;
 import java.util.HashSet;
 import java.util.Set;
 
-import static com.algorithm.practice.linkedlist.util.LinkedListUtil.*;
+import static com.algorithm.practice.linkedlist.LinkedListUtil.*;
 
 public class DeleteDuplicateWithExtraStorage {
 

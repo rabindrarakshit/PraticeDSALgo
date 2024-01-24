@@ -1,7 +1,5 @@
 package com.algorithm.practice.linkedlist;
 
-import com.algorithm.practice.linkedlist.util.LinkedListUtil;
-
 public class LinkedListReverse {
     static LinkedListNode reverseRecursive(LinkedListNode head) {
         if (head == null || head.next == null) {

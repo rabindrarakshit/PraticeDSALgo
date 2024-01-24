@@ -1,6 +1,6 @@
 package com.algorithm.practice.linkedlist;
 
-import static com.algorithm.practice.linkedlist.util.LinkedListUtil.*;
+import static com.algorithm.practice.linkedlist.LinkedListUtil.*;
 
 public class DeleteDuplicateWithoutExtraStorage {
     public static void deleteDuplicates(LinkedListNode node) {

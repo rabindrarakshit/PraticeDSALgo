@@ -1,7 +1,5 @@
 package com.algorithm.practice.linkedlist;
 
-import com.algorithm.practice.linkedlist.util.LinkedListUtil;
-
 public class ConvertArrayToLinkedList {
     static LinkedListNode convert(int[] arr){
         LinkedListNode head = new LinkedListNode(arr[0]);
