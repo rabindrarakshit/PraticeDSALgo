@@ -1,5 +1,6 @@
 package com.algorithm.practice.linkedlist;
 
+
 // Naive : Hashmap , Just put in new and check if already existing. if existing then there is a loop
 // Time Complexity: O(N)
 // Space Complexity: O(N)
@@ -8,20 +9,29 @@ package com.algorithm.practice.linkedlist;
 // Time Complexity: O(N)
 // Space Complexity: O(1)
 
-// Ref: https://takeuforward.org/data-structure/detect-a-cycle-in-a-linked-list/
+// Ref: https://takeuforward.org/data-structure/starting-point-of-loop-in-a-linked-list/
+public class StartingPointOfLoop {
 
-public class DetectALoop {
-    static boolean detectLoop(LinkedListNode head){
+    static LinkedListNode getLoopStartingPoint(LinkedListNode head) {
         LinkedListNode fast = head;
         LinkedListNode slow = head;
-        while(fast!=null && fast.next!=null){
-            fast = fast.next.next;
+        boolean loopExists = false;
+        while (fast != null && fast.next != null) {
             slow = slow.next;
-            if(slow == fast){
-                return true;
+            fast = fast.next.next;
+            if (slow == fast) {
+                loopExists = true;
+                break;
             }
         }
-        return false;
+        if (loopExists) {
+            LinkedListNode entry = head;
+            while (slow != entry) {
+                entry = entry.next;
+                slow = slow.next;
+            }
+        }
+        return slow;
     }
 
     public static void main(String[] args) {
@@ -32,6 +42,6 @@ public class DetectALoop {
         LinkedListNode node2 = new LinkedListNode(1, node3);
         LinkedListNode node1 = new LinkedListNode(2, node2);
         node6.next = node3;
-        System.out.println(detectLoop(node1));
+        System.out.println(getLoopStartingPoint(node1).data);
     }
 }

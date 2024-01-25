@@ -8,4 +8,8 @@ public class LinkedListNode {
         this.data = data;
         this.next = null;
     }
+    public LinkedListNode(int data, LinkedListNode next) {
+        this.data = data;
+        this.next = next;
+    }
 }
