@@ -1,4 +1,4 @@
-package com.algorithm.practice.linkedlist;
+package com.algorithm.practice.linkedlist.doubleLinkedList;
 
 public class DoubleLinkedListOperations {
     static DoubleLinkedListNode insertEnd(DoubleLinkedListNode head, int data) {
@@ -25,15 +25,15 @@ public class DoubleLinkedListOperations {
     }
 
     static DoubleLinkedListNode reverse(DoubleLinkedListNode head) {
-       DoubleLinkedListNode current = head;
-       DoubleLinkedListNode prev=null;
-       while(current!=null){
-           prev = current.prev;
-           current.prev = current.next;
-           current.next = prev;
-           current = current.prev;
-       }
-       return prev.prev;
+        DoubleLinkedListNode current = head;
+        DoubleLinkedListNode prev = null;
+        while (current != null) {
+            prev = current.prev;
+            current.prev = current.next;
+            current.next = prev;
+            current = current.prev;
+        }
+        return prev.prev;
     }
 
     static void printDoubleLinkedList(DoubleLinkedListNode head) {

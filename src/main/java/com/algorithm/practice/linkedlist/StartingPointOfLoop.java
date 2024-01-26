@@ -39,8 +39,8 @@ public class StartingPointOfLoop {
         LinkedListNode node5 = new LinkedListNode(5, node6);
         LinkedListNode node4 = new LinkedListNode(4, node5);
         LinkedListNode node3 = new LinkedListNode(3, node4);
-        LinkedListNode node2 = new LinkedListNode(1, node3);
-        LinkedListNode node1 = new LinkedListNode(2, node2);
+        LinkedListNode node2 = new LinkedListNode(2, node3);
+        LinkedListNode node1 = new LinkedListNode(1, node2);
         node6.next = node3;
         System.out.println(getLoopStartingPoint(node1).data);
     }

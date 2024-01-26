@@ -1,4 +1,4 @@
-package com.algorithm.practice.linkedlist;
+package com.algorithm.practice.linkedlist.doubleLinkedList;
 
 public class DoubleLinkedListNode {
     DoubleLinkedListNode prev;
