@@ -13,7 +13,7 @@ public class ConvertArrayToLinkedList {
     }
 
     public static void main(String[] args) {
-        LinkedListNode head = convert(new int[]{1,2,3,4});
+        LinkedListNode head = convert(new int[]{2,1,0,2,1,0});
         LinkedListUtil.printLinkedList(head);
     }
 }
