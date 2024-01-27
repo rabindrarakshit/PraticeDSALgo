@@ -1,5 +1,7 @@
 package com.algorithm.practice.linkedlist;
 
+// This returns the center not center +1. So for the below input in main it returns 3.
+
 public class FindCenter {
     static LinkedListNode findCenter(LinkedListNode head) {
         LinkedListNode slow = head;
