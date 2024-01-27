@@ -1,5 +1,9 @@
 package com.algorithm.practice.linkedlist;
 
+// Ref: https://leetcode.com/problems/sort-list/description/
+// Time Complexity: O(nlog(n))
+// Space Complexity: O(1)
+
 public class SortLinkedList {
     static LinkedListNode mergeSort(LinkedListNode head) {
         if (head == null || head.next == null) {
