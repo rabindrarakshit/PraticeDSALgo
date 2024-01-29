@@ -1,7 +1,7 @@
 package com.algorithm.practice.linkedlist;
 
 public class ConvertArrayToLinkedList {
-    static LinkedListNode convert(int[] arr){
+    public static LinkedListNode convert(int[] arr){
         LinkedListNode head = new LinkedListNode(arr[0]);
         LinkedListNode prev = head;
         for(int i=1;i<arr.length;i++){

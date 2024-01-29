@@ -12,7 +12,7 @@ public class LinkedListReverse {
         return newHead;
     }
 
-    static LinkedListNode reverseIterative(LinkedListNode head) {
+    public static LinkedListNode reverseIterative(LinkedListNode head) {
         LinkedListNode current = head;
         LinkedListNode prev = null;
         while (current != null) {
