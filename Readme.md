@@ -8,3 +8,4 @@ Specific Algo:
 TO DO:
 
 1. Manacher
+2. HMM : Hidden Markov Model
