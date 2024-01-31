@@ -4,6 +4,7 @@ Specific Algo:
 
 1. Manacher (Max Palindrome Subsequence)
 2. Kadane
+3. Dutch National Flag
 
 TO DO:
 
