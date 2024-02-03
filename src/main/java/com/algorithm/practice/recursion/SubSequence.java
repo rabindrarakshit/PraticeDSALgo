@@ -1,23 +1,26 @@
 package com.algorithm.practice.recursion;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
+
+// ref: https://takeuforward.org/data-structure/power-set-print-all-the-possible-subsequences-of-the-string/
+// Time: O(2^n)
+// Space: O(n) : recursion stack space
 
 public class SubSequence {
     public static void main(String[] args) {
-        for (String str : subSequence("123", 0, "", new HashSet<String>())) {
+        for (String str : subSequence("abc", 0, "", new ArrayList<>())) {
             System.out.println(str);
         }
     }
 
-    public static Set<String> subSequence(String str, int index, String newString, Set<String> set) {
+    public static List<String> subSequence(String str, int index, String newString, List<String> list) {
         if (index == str.length()) {
-            if (!set.contains(newString))
-                set.add(newString);
-            return set;
+            list.add(newString);
+            return list;
         }
-        set = subSequence(str, index + 1, newString + str.charAt(index), set);
-        set = subSequence(str, index + 1, newString, set);
-        return set;
+        subSequence(str, index + 1, newString + str.charAt(index), list);
+        subSequence(str, index + 1, newString, list);
+        return list;
     }
 }
