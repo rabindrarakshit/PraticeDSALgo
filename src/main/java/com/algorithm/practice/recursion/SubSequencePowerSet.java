@@ -7,10 +7,10 @@ import java.util.List;
 // Time: O(2^n)
 // Space: O(n) : recursion stack space
 
-public class SubSequence {
+public class SubSequencePowerSet {
     public static void main(String[] args) {
         for (String str : subSequence("abc", 0, "", new ArrayList<>())) {
-            System.out.println(str);
+            System.out.print(str + " ");
         }
     }
 
