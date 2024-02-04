@@ -13,16 +13,18 @@ import java.util.List;
 
 
 public class CombinationSum1 {
-    public static List<String> countCombinations(int[] arr, int givenSum, int sum, int num, int count, String newString, List<String> result) {
+    public static List<List<Integer>> countCombinations(int[] arr, int givenSum, int sum, int index, List<Integer> sub, List<List<Integer>> result) {
         if (sum == givenSum) {
-            result.add(newString);
+            result.add(new ArrayList<>(sub));
             return result;
         }
-        if (num >= arr.length) {
+        if (index >= arr.length) {
             return result;
         }
         for (int i = 0; i < arr.length; i++) {
-            countCombinations(arr, givenSum, sum + arr[i], num + 1, count, newString + arr[i], result);
+            sub.add(arr[i]);
+            countCombinations(arr, givenSum, sum + arr[i], index + 1, sub, result);
+            sub.remove(sub.size() - 1);
         }
         return result;
     }
@@ -43,11 +45,9 @@ public class CombinationSum1 {
     }
 
     public static void main(String[] args) {
-        for (String s : countCombinations(new int[]{1, 2}, 2, 0, 0, 0, "", new ArrayList<>())) {
-            //        System.out.println(s);
-        }
         List<List<Integer>> result = new ArrayList<>();
-        countCombinationsPickNotPick(new int[]{1, 2}, 2, new ArrayList<>(), result, 0);
+        //countCombinationsPickNotPick(new int[]{1, 2}, 2, new ArrayList<>(), result, 0);
+        countCombinations(new int[]{1, 2}, 2, 0,0, new ArrayList<>(), result);
         System.out.println();
         for (List<Integer> list : result) {
             for (Integer i : list) {
