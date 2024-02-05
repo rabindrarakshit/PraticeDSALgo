@@ -1,4 +1,4 @@
-package com.algorithm.practice.recursion;
+package com.algorithm.practice.recursion.subsequemceandcombination;
 
 public class KeyPadCombination {
     public static String[] keys = new String[]{".", "abc", "def", "ghi", "jkl"};

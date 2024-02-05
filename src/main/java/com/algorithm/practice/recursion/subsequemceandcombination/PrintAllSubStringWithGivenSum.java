@@ -1,4 +1,4 @@
-package com.algorithm.practice.recursion;
+package com.algorithm.practice.recursion.subsequemceandcombination;
 
 import java.util.ArrayList;
 import java.util.List;
