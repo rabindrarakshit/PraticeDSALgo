@@ -1,4 +1,4 @@
-package com.algorithm.practice.recursion.subsequemceandcombination;
+package com.algorithm.practice.recursion.subsequenceandcombination;
 
 // Find the number of ways in which you can invite n people to your party, single or in pairs
 
