@@ -1,6 +1,6 @@
 package com.algorithm.practice.stack;
 
-public class StackClass {
+public class StackUsingLinkedList {
     static class Node<K>{
         Node next;
         K data;
