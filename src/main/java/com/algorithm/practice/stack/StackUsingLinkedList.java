@@ -31,6 +31,7 @@ public class StackUsingLinkedList {
             if(head==null){
                 Node node = new Node(data);
                 head = node;
+                return;
             }
             K top = pop();
             pushAtBottom(data);
@@ -71,7 +72,7 @@ public class StackUsingLinkedList {
         stack.head = node1;
         node1.next = node2;
 
-        stack.push(1);
+        stack.pushAtBottom(1);
         System.out.println(stack.peek());
         stack.pop();
         System.out.println(stack.peek());
