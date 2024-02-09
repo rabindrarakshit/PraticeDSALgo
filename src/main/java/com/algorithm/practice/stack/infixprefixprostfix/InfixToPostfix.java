@@ -1,4 +1,4 @@
-package com.algorithm.practice.stack;
+package com.algorithm.practice.stack.infixprefixprostfix;
 
 import java.util.Stack;
 
