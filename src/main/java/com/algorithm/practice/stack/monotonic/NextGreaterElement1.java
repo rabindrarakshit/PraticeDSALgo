@@ -6,7 +6,7 @@ import java.util.Stack;
 
 // Ref: https://leetcode.com/problems/next-greater-element-i/submissions/1170525297/
 // Time: O(n+m)
-// Space: O(n)
+// Space: O(n: map + n: stack)
 
 public class NextGreaterElement1 {
     static Map<Integer, Integer> nextGreaterElement(int[] arr) {
