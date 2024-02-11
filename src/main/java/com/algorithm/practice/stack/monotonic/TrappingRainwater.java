@@ -1,4 +1,4 @@
-package com.algorithm.practice.arrays.medium;
+package com.algorithm.practice.stack.monotonic;
 
 //ref: https://takeuforward.org/data-structure/trapping-rainwater/
 
