@@ -30,6 +30,7 @@ public class AsteroidCollision {
     // Time: O(2N)
     // Space: O(N)
     static int[] getRemaining(int[] arr) {
+        // This is same as stack, we have used LinkedList here, or else we would have to reverse the array at last.
         LinkedList<Integer> list = new LinkedList<>();
         for (int i : arr) {
             while (!list.isEmpty() && list.getLast() > 0 && list.getLast() < -i) {
