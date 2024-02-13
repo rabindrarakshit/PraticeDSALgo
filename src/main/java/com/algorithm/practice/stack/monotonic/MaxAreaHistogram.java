@@ -28,8 +28,7 @@ public class MaxAreaHistogram {
         for (int i = 0; i <= arr.length; i++) {
             int cur = i >= arr.length ? Integer.MIN_VALUE : arr[i];
             while (stack.peek() != -1 && arr[stack.peek()] >= cur) {
-                sum = Math.max(sum, arr[stack.peek()] * (i - stack.peek()));
-                stack.pop();
+                sum = Math.max(sum, arr[stack.pop()] * (i - stack.peek()-1));
             }
             stack.push(i);
         }
@@ -37,6 +36,9 @@ public class MaxAreaHistogram {
     }
 
     public static void main(String[] args) {
-        System.out.println(maxAreaMonotonicStack(new int[]{3, 1, 1, 1, 5, 6}));
+        System.out.println(maxAreaMonotonicStack(new int[]{3, 1, 3, 2, 2}));
+        System.out.println(maxAreaMonotonicStack(new int[]{1,6,5}));
+        System.out.println(maxAreaMonotonicStack(new int[]{1,6,5,6}));
+        System.out.println(maxAreaMonotonicStack(new int[]{1,6,5,1}));
     }
 }
