@@ -1,12 +1,11 @@
 Repo for practising DS and Algo
 
-Specific Algo:
+Categories :
 
 1. Manacher (Max Palindrome Subsequence)
 2. Kadane
 3. Dutch National Flag
-
-TO DO:
-
-1. Manacher
-2. HMM : Hidden Markov Model
+4. Sliding Window
+5. Prefix Sum
+6. SubArray
+7. 
