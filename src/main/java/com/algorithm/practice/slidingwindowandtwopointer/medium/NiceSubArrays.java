@@ -1,4 +1,4 @@
-package com.algorithm.practice.slidingwindowandtwopointer;
+package com.algorithm.practice.slidingwindowandtwopointer.medium;
 
 //Ref: https://leetcode.com/problems/count-number-of-nice-subarrays/description/
 public class NiceSubArrays {

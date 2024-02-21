@@ -1,4 +1,4 @@
-package com.algorithm.practice.slidingwindowandtwopointer;
+package com.algorithm.practice.slidingwindowandtwopointer.medium;
 
 // Ref: https://leetcode.com/problems/max-consecutive-ones-iii/description/
 

@@ -1,4 +1,4 @@
-package com.algorithm.practice.slidingwindowandtwopointer;
+package com.algorithm.practice.slidingwindowandtwopointer.medium;
 
 // Ref: https://leetcode.com/problems/longest-repeating-character-replacement/description/
 // Here the difference is we can replace any character

@@ -1,4 +1,4 @@
-package com.algorithm.practice.slidingwindowandtwopointer;
+package com.algorithm.practice.slidingwindowandtwopointer.medium;
 
 public class NumberOfSubStringContainingAllThreeChar {
 

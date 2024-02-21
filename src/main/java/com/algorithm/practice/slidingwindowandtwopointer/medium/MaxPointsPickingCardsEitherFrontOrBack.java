@@ -1,4 +1,4 @@
-package com.algorithm.practice.slidingwindowandtwopointer;
+package com.algorithm.practice.slidingwindowandtwopointer.medium;
 
 // Ref: https://leetcode.com/problems/maximum-points-you-can-obtain-from-cards/description/
 public class MaxPointsPickingCardsEitherFrontOrBack {
