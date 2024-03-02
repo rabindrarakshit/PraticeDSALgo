@@ -1,10 +1,9 @@
 package com.algorithm.practice.heap;
 
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.PriorityQueue;
 
-import static java.util.Comparator.comparingInt;
+// Ref: https://www.algoexpert.io/questions/continuous-median
 
 public class ContinuousMedianPriorityQueue {
 
@@ -14,33 +13,34 @@ public class ContinuousMedianPriorityQueue {
         double median = 0;
 
         void insert(Integer data) {
-            if (lower.size()==0 || data < lower.peek()) {
+            if (lower.size() == 0 || data < lower.peek()) {
                 lower.add(data);
-            }else{
+            } else {
                 upper.add(data);
             }
             rebalance();
             updateMedian();
         }
 
-        void rebalance(){
-            if(lower.size()- upper.size()==2){
+        void rebalance() {
+            if (lower.size() - upper.size() == 2) {
                 upper.add(lower.poll());
-            }else if(upper.size()- lower.size()==2){
+            } else if (upper.size() - lower.size() == 2) {
                 lower.add(upper.poll());
             }
         }
+
         void updateMedian() {
             if (lower.size() == upper.size()) {
-                median =  ((double) lower.peek() + (double) upper.peek()) / 2;
+                median = ((double) lower.peek() + (double) upper.peek()) / 2;
             } else if (lower.size() > upper.size()) {
                 median = lower.peek();
             } else {
-                median =  upper.peek();
+                median = upper.peek();
             }
         }
 
-        double getMedian(){
+        double getMedian() {
             return median;
         }
     }

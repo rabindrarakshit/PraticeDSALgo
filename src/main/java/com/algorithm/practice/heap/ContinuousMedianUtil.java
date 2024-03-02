@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.BiFunction;
 
+// Ref: https://www.algoexpert.io/questions/continuous-median
+
 public class ContinuousMedianUtil {
 
     static class ContinuousMedian {
@@ -17,7 +19,7 @@ public class ContinuousMedianUtil {
         }
 
         public void insert(Integer data) {
-            if (maxHeap.length==0 || data < maxHeap.peek()) {
+            if (maxHeap.length == 0 || data < maxHeap.peek()) {
                 maxHeap.insert(data);
             } else {
                 minHeap.insert(data);
@@ -38,9 +40,9 @@ public class ContinuousMedianUtil {
             if (maxHeap.length == minHeap.length) {
                 median = ((double) maxHeap.peek() + (double) minHeap.peek()) / 2;
             } else if (maxHeap.length > minHeap.length) {
-                median = (double)maxHeap.peek();
+                median = (double) maxHeap.peek();
             } else {
-                median = (double)minHeap.peek();
+                median = (double) minHeap.peek();
             }
         }
     }
@@ -76,7 +78,7 @@ public class ContinuousMedianUtil {
                     swap(parentIdx, currentIdx);
                     currentIdx = parentIdx;
                     parentIdx = (currentIdx - 1) / 2;
-                }else{
+                } else {
                     return;
                 }
             }
@@ -93,14 +95,14 @@ public class ContinuousMedianUtil {
                     } else {
                         idxToBeReplaced = rightChildIdx;
                     }
-                }else{
+                } else {
                     idxToBeReplaced = leftChildIdx;
                 }
                 if (comparisionFunc.apply(heap.get(idxToBeReplaced), heap.get(currentIdx))) {
                     swap(currentIdx, idxToBeReplaced);
                     currentIdx = idxToBeReplaced;
                     leftChildIdx = currentIdx * 2 + 1;
-                }else{
+                } else {
                     return;
                 }
             }

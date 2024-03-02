@@ -1,16 +1,17 @@
 package com.algorithm.practice.heap;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class MinHeapUtil {
 
     static class MinHeap {
         List<Integer> heap;
-        public MinHeap(List<Integer> array){
+
+        public MinHeap(List<Integer> array) {
             heap = buildHeap(array);
         }
+
         public List<Integer> buildHeap(List<Integer> arr) {
             int parentIdx = (arr.size() - 2) / 2;
             for (int currentIdx = parentIdx; currentIdx >= 0; currentIdx--) {
