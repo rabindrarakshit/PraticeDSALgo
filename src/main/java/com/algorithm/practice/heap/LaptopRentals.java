@@ -5,8 +5,10 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.PriorityQueue;
 
-public class LaptopRentals {
+// Ref: https://www.algoexpert.io/questions/laptop-rentals
 
+public class LaptopRentals {
+    // Time: O(nlog(n)) | Space : O(n)
     static int laptopRentals(List<List<Integer>> times){
         if(times.isEmpty()){
             return 0;
