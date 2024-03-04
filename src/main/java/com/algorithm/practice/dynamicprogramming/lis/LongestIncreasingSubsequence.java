@@ -2,6 +2,8 @@ package com.algorithm.practice.dynamicprogramming.lis;
 
 import java.util.Arrays;
 
+//Ref: https://takeuforward.org/data-structure/longest-increasing-subsequence-dp-41/
+
 public class LongestIncreasingSubsequence {
     static int longest(int[] prices) {
         int length = prices.length;
