@@ -10,19 +10,19 @@ import java.util.PriorityQueue;
 
 public class MergeKSortedMinHeap {
 
-    static List<Integer> mergeSortedArray(List<List<Integer>> array){
+    static List<Integer> mergeSortedArray(List<List<Integer>> arrays){
         List<Integer> sortedArray = new ArrayList<>();
         PriorityQueue<Item> minHeap = new PriorityQueue<>(Comparator.comparingInt(Item::getValue));
-        for(int i=0;i<array.size();i++){
-            minHeap.add(new Item(i, 0, array.get(i).get(0)));
+        for(int i=0;i<arrays.size();i++){
+            minHeap.add(new Item(i, 0, arrays.get(i).get(0)));
         }
         while(!minHeap.isEmpty()){
             Item minItem = minHeap.remove();
             sortedArray.add(minItem.getValue());
-            if(minItem.elementIndex==array.get(minItem.arrayIndex).size()-1){
+            if(minItem.elementIndex==arrays.get(minItem.arrayIndex).size()-1){
                 continue;
             }
-            minHeap.add(new Item(minItem.arrayIndex, minItem.elementIndex+1, array.get(minItem.arrayIndex).get(minItem.elementIndex+1)));
+            minHeap.add(new Item(minItem.arrayIndex, minItem.elementIndex+1, arrays.get(minItem.arrayIndex).get(minItem.elementIndex+1)));
         }
         return sortedArray;
     }

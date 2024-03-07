@@ -8,13 +8,13 @@ import java.util.List;
 // Time: O(n*k) | Space: O(n+k)
 
 public class MergeKSortedArrays {
-    static List<Integer> mergeKSortedArray(List<List<Integer>> input) {
+    static List<Integer> mergeKSortedArray(List<List<Integer>> arrays) {
         List<Integer> sortedList = new ArrayList<>();
-        List<Integer> indexes = new ArrayList<>(Collections.nCopies(input.size(), 0));
+        List<Integer> indexes = new ArrayList<>(Collections.nCopies(arrays.size(), 0));
         while (true) {
             List<Item> items = new ArrayList<>();
-            for (int i = 0; i < input.size(); i++) {
-                List<Integer> currentList = input.get(i);
+            for (int i = 0; i < arrays.size(); i++) {
+                List<Integer> currentList = arrays.get(i);
                 int index = indexes.get(i);
                 if (index == currentList.size()) {
                     continue;
