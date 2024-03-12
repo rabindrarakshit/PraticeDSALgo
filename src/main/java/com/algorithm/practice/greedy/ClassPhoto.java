@@ -11,16 +11,15 @@ public class ClassPhoto {
     ) {
         Collections.sort(redShirtHeights);
         Collections.sort(blueShirtHeights);
+        String firstRow = redShirtHeights.get(0) < blueShirtHeights.get(0) ? "RED" : "BLUE";
 
-        String firstRow = redShirtHeights.get(0)<blueShirtHeights.get(0)? "RED" : "BLUE";
-
-        for(int i=0;i<redShirtHeights.size();i++){
-            if(firstRow.equals("RED")){
-                if(redShirtHeights.get(i)>=blueShirtHeights.get(i)){
+        for (int i = 0; i < redShirtHeights.size(); i++) {
+            if (firstRow.equals("RED")) {
+                if (redShirtHeights.get(i) >= blueShirtHeights.get(i)) {
                     return false;
                 }
-            }else{
-                if(blueShirtHeights.get(i)>=redShirtHeights.get(i)){
+            } else {
+                if (blueShirtHeights.get(i) >= redShirtHeights.get(i)) {
                     return false;
                 }
             }
