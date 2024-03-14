@@ -1,6 +1,7 @@
-package com.algorithm.practice.dynamicprogramming.twod;
+package com.algorithm.practice.dynamicprogramming.strings;
 
 //Ref: https://www.algoexpert.io/questions/levenshtein-distance
+//ref: https://takeuforward.org/data-structure/edit-distance-dp-33/
 
 public class LevenshteinDistance {
     // Time: O(nm) | Space: O(nm)
