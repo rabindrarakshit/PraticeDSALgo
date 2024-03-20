@@ -1,4 +1,4 @@
-package com.algorithm.practice.dynamicprogramming;
+package com.algorithm.practice.dynamicprogramming.oned;
 
 public class FrogJumpMinStepsK {
     static int minJumps(int[] height, int k) {

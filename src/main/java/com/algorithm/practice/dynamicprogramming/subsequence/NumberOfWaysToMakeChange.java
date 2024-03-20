@@ -1,4 +1,4 @@
-package com.algorithm.practice.dynamicprogramming;
+package com.algorithm.practice.dynamicprogramming.subsequence;
 
 // Ref: https://www.algoexpert.io/questions/number-of-ways-to-make-change
 // Time: O(mn) | Space: O(n)

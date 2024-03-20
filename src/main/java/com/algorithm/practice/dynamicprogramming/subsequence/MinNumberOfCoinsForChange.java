@@ -1,4 +1,4 @@
-package com.algorithm.practice.dynamicprogramming;
+package com.algorithm.practice.dynamicprogramming.subsequence;
 
 import java.util.Arrays;
 

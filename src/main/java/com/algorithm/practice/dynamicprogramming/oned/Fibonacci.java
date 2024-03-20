@@ -1,4 +1,4 @@
-package com.algorithm.practice.dynamicprogramming;
+package com.algorithm.practice.dynamicprogramming.oned;
 
 import java.util.Arrays;
 

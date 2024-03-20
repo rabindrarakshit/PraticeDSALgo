@@ -1,4 +1,4 @@
-package com.algorithm.practice.dynamicprogramming;
+package com.algorithm.practice.dynamicprogramming.oned;
 
 // Ref: https://takeuforward.org/data-structure/dynamic-programming-climbing-stairs/
 

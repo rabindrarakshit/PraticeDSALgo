@@ -1,4 +1,4 @@
-package com.algorithm.practice.dynamicprogramming;
+package com.algorithm.practice.dynamicprogramming.twod;
 
 //Ref: https://takeuforward.org/data-structure/dynamic-programming-ninjas-training-dp-7/
 // Space : O(2*tasks) | Time: O(days*(tasks+1)*(tasks))

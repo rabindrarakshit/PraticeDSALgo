@@ -1,4 +1,4 @@
-package com.algorithm.practice.dynamicprogramming;
+package com.algorithm.practice.dynamicprogramming.oned;
 
 public class HouseRobber {
     static int maxRob(int[] houses){

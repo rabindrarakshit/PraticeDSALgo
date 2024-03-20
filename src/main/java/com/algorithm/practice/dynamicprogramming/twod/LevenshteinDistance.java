@@ -1,4 +1,4 @@
-package com.algorithm.practice.dynamicprogramming;
+package com.algorithm.practice.dynamicprogramming.twod;
 
 //Ref: https://www.algoexpert.io/questions/levenshtein-distance
 

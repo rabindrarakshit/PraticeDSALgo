@@ -1,4 +1,4 @@
-package com.algorithm.practice.dynamicprogramming;
+package com.algorithm.practice.dynamicprogramming.oned;
 
 public class MaxSumNonAdjacent {
     static int maxSumDP(int[] array) {
