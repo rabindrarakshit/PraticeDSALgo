@@ -1,5 +1,7 @@
 package com.algorithm.practice.dynamicprogramming.subsequence;
 
+// Ref: https://takeuforward.org/data-structure/count-subsets-with-sum-k-dp-17/
+
 public class CountSubsetsWithSumK {
     static int subSets(int[] arr, int k){
         int length = arr.length;
