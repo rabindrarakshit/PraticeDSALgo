@@ -4,7 +4,7 @@ package com.algorithm.practice.dynamicprogramming.strings;
 
 import java.util.Arrays;
 
-public class LongestCommonSubsequence {
+public class LongestCommonSubsequenceLength {
 
     static int maxLengthMemo(String str1, String str2) {
         int[][] dp = new int[str1.length()][str2.length()];
