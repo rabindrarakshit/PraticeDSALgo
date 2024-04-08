@@ -2,7 +2,7 @@ package com.algorithm.practice.dynamicprogramming.partitionDP;
 
 //Ref: https://takeuforward.org/data-structure/partition-array-for-maximum-sum-front-partition-dp-54/
 
-public class PartititionArrayForMaximumSum {
+public class PartitionArrayForMaximumSum {
     static int maxSum(int[] arr, int k) {
         return maxSumRecur(arr, k, 0);
     }
