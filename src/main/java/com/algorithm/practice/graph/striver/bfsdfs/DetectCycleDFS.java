@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 // Ref: https://takeuforward.org/data-structure/detect-cycle-in-an-undirected-graph-using-dfs/
+// Time : O(N + 2E) | Space : O(N)--> visited + O(N) --> stack space
 
 public class DetectCycleDFS {
     static boolean detectCycleDFS(List<List<Integer>> list) {
