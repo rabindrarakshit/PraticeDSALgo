@@ -1,29 +1,12 @@
 package com.algorithm.practice.dynamicprogramming.twod;
 
+import java.util.Arrays;
+
 public class WaysToTraverseGraph {
 
     // Solution 1
     // Simple recursion
     // TIme : O(2^(m+n)) | Space: O(m+n)
-
-
-    // Time: O(n*m) | Space : O(n*m)
-    // Solution 2 (DP - Tabulation- Top-Down)
-    public int numberOfWaysToTraverseGraph(int width, int height) {
-        int[][] ways = new int[height][width];
-        for (int i = 0; i < width; i++) {
-            ways[height - 1][i] = 1;
-        }
-        for (int i = 0; i < height; i++) {
-            ways[i][width - 1] = 1;
-        }
-        for (int i = height - 2; i >= 0; i--) {
-            for (int j = width - 2; j >= 0; j--) {
-                ways[i][j] = ways[i][j + 1] + ways[i + 1][j];
-            }
-        }
-        return ways[0][0];
-    }
 
     // Time: O(n*m) | Space : O(n*m)
     // Solution 2 (DP - Tabulation- Bottom-Up)
@@ -46,7 +29,7 @@ public class WaysToTraverseGraph {
     // Solution 3
     // Optimized memory (DP)
     static int waysMemoryOptimized(int m, int n) {
-        if(m==1 || n==1){
+        if (m == 1 || n == 1) {
             return 1;
         }
         int[] prev = new int[n];
@@ -64,8 +47,47 @@ public class WaysToTraverseGraph {
         return prev[n - 1];
     }
 
+    //Basic Recursion
+    static int waysrecursion(int m, int n) {
+        if (m == 1 || n == 1) {
+            return 1;
+        }
+        return waysrecursion(m - 1, n) + waysrecursion(m, n - 1);
+    }
+
+    static int waysrecursion2(int m, int n) {
+        if (m < 0 || n < 0) {
+            return 0;
+        }
+        if (m == 0 && n == 0) {
+            return 1;
+        }
+        return waysrecursion2(m - 1, n) + waysrecursion2(m, n - 1);
+    }
+
+    // Memoization
+    static int waysDP(int m, int n, int[][] dp) {
+        if (dp[m][n] != -1) {
+            return dp[m][n];
+        }
+        dp[m][n] = waysrecursion(m - 1, n) + waysrecursion(m, n - 1);
+        return dp[m][n];
+    }
+
     public static void main(String[] args) {
-        System.out.println(waysMemoryOptimized(2, 1));
+        System.out.println(waysMemoryOptimized(3, 3));
+        System.out.println(waysrecursion(3, 3));
+        System.out.println(waysrecursion2(2, 2));
+        int[][] dp = new int[4][4];
+        for (int i = 0; i < 4; i++) {
+            dp[0][i] = 1;
+        }
+        for (int i = 0; i < 4; i++) {
+            dp[i][0] = 1;
+        }
+        for (int[] arr : dp)
+            Arrays.fill(arr, -1);
+        System.out.println(waysDP(3, 3, dp));
     }
 
 }

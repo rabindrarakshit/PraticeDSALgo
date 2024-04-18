@@ -41,9 +41,9 @@ public class Fibonacci {
         int prev2 = 1;
         int cur = 0;
         for (int i = 2; i < n; i++) {
-           cur=prev+prev2;
-           prev = cur;
-           prev2=prev;
+            cur = prev + prev2;
+            prev = cur;
+            prev2 = prev;
         }
         return cur;
     }

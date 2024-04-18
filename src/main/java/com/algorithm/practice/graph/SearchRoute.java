@@ -1,5 +1,8 @@
 package com.algorithm.practice.graph;
 
+import com.algorithm.practice.graph.basic.GraphNode;
+import com.algorithm.practice.graph.basic.State;
+
 import java.util.LinkedList;
 
 public class SearchRoute {
@@ -8,7 +11,7 @@ public class SearchRoute {
             return true;
         }
         LinkedList<GraphNode> q = new LinkedList<>();
-        source.state=State.Visiting;
+        source.state= State.Visiting;
         q.add(source);
         GraphNode node;
         while(!q.isEmpty()){

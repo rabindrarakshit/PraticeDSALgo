@@ -35,6 +35,17 @@ public class MinimumPathTriangularGrid {
         return min;
     }
 
+    // recursion
+    static int minPathSum(int[][] matrix, int r, int c) {
+        if (r < 0 || c < 0) {
+            return 1000;
+        }
+        if (r == 0 && c == 0) {
+            return matrix[0][0];
+        }
+        return matrix[r][c] + Math.min(minPathSum(matrix, r - 1, c), minPathSum(matrix, r-1, c - 1));
+    }
+
     public static void main(String[] args) {
         int matrix[][] = {{1},
                 {2, 3},

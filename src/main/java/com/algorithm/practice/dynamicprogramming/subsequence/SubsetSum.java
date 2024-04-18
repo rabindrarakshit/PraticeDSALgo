@@ -28,4 +28,28 @@ public class SubsetSum {
         }
         return dp[rows-1][k];
     }
+
+    static boolean subSetSum(int[] arr, int index, int target, Boolean[][] dp) {
+        if (target == 0) {
+            return true;
+        }
+        if (index < 0 || target < 0) {
+            return false;
+        }
+        if (dp[index][target] != null) {
+            return dp[index][target];
+        }
+        boolean take = subSetSum(arr, index - 1, target - arr[index], dp);
+        boolean notTake = subSetSum(arr, index - 1, target, dp);
+        dp[index][target] = take || notTake;
+        return dp[index][target];
+    }
+
+    public static void main(String[] args) {
+        int[] arr = new int[]{1, 2, 3, 4};
+        int indexes = arr.length - 1;
+        int target = 4;
+        Boolean[][] dp = new Boolean[indexes + 1][target + 1];
+        System.out.println(subSetSum(arr, arr.length - 1, target, dp));
+    }
 }

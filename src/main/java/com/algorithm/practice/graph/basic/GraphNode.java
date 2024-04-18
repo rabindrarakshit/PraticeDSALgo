@@ -1,14 +1,14 @@
-package com.algorithm.practice.graph;
+package com.algorithm.practice.graph.basic;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class GraphNode {
     int value;
-    List<GraphNode> adjacents;
-    State state;
+    public List<GraphNode> adjacents;
+    public State state;
 
-    GraphNode(int value) {
+    public GraphNode(int value) {
         this.value = value;
         adjacents = new ArrayList<>();
         state = State.UnVisited;

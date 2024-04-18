@@ -32,10 +32,29 @@ public class MinimumPathFallingSum {
         return min;
     }
 
+    static int maxSum(int[][] grid, int r, int c) {
+        if (r < 0 || c < 0 || c >= grid[0].length) {
+            return 0;
+        }
+        if (r == 0 || c == 0) {
+            return grid[r][c];
+        }
+        int max = Integer.MIN_VALUE;
+        for (int i = 0; i < grid[0].length; i++) {
+            int top = grid[r][i] + maxSum(grid, r - 1, i);
+            int topLeft = grid[r][i] +maxSum(grid, r - 1, i + 1);
+            int topRight = grid[r][i] + maxSum(grid, r - 1, i - 1);
+            int currentSum = Math.max(Math.max(top, topLeft), topRight);
+            max = Math.max(max, currentSum);
+        }
+        return max;
+    }
+
     public static void main(String[] args) {
         int matrix[][] = {{2, 1, 3},
                 {6, 5, 4},
                 {7, 8, 9}};
         System.out.println(minSum(matrix));
+        System.out.println(maxSum(matrix, matrix.length-1, matrix[0].length-1));
     }
 }
