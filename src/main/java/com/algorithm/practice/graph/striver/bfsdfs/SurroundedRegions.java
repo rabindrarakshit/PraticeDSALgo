@@ -15,7 +15,7 @@ public class SurroundedRegions {
     }
 
     static void dfs(char[][] matrix, int row, int col, boolean[][] visited) {
-
+        visited[row][col] = true;
         int[] deltaRow = {0, -1, 0, 1};
         int[] deltaCol = {-1, 0, 1, 0};
 
@@ -25,7 +25,6 @@ public class SurroundedRegions {
             if (neighbourRow < visited.length && neighbourCol < visited[0].length && neighbourRow >= 0 && neighbourCol >= 0 &&
                     !visited[neighbourRow][neighbourCol]) {
                 if (matrix[neighbourRow][neighbourCol] == 'O') {
-                    visited[neighbourRow][neighbourCol] = true;
                     dfs(matrix, neighbourRow, neighbourCol, visited);
                 }
             }
@@ -37,26 +36,25 @@ public class SurroundedRegions {
         int cols = matrix[0].length;
         boolean[][] visited = new boolean[rows][cols];
 
+        for (int i = 0; i < matrix.length; i++) {
+            //First Col
+            if (!visited[i][0] && matrix[i][0] == 'O') {
+                dfs(matrix, i, 0, visited);
+            }
+            // Last Col
+            if (!visited[i][cols - 1] && matrix[i][cols - 1] == 'O') {
+                dfs(matrix, i, cols - 1, visited);
+            }
+        }
+
         for (int i = 0; i < matrix[0].length; i++) {
             //First Row
             if (!visited[0][i] && matrix[0][i] == 'O') {
-                visited[0][i] = true;
-                dfs(matrix, i, 0, visited);
-            }
-            // Last Row
-            if (!visited[0][i] && matrix[rows - 1][i] == 'O') {
-                visited[rows - 1][i] = true;
                 dfs(matrix, 0, i, visited);
             }
-        }
-        for (int i = 0; i < matrix.length; i++) {
-            //First Column
-            if (!visited[0][i] && matrix[i][0] == 'O') {
-                visited[i][0] = true;
-            }
-            // Last Column
-            if (!visited[0][i] && matrix[i][cols - 1] == 'O') {
-                visited[i][cols - 1] = true;
+            // Last Row
+            if (!visited[rows - 1][i] && matrix[rows - 1][i] == 'O') {
+                dfs(matrix, rows - 1, i, visited);
             }
         }
         for (int i = 0; i < rows; i++) {

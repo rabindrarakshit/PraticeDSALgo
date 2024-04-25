@@ -23,10 +23,33 @@ public class BFS {
             Integer node = q.poll();
             bfs.add(node);
             for (Integer i : adjList.get(node)) {
-                q.add(i);
-                visited[i] = true;
+                if (!visited[i]) {
+                    q.add(i);
+                    visited[i] = true;
+                }
             }
         }
         return bfs;
+    }
+
+    public static void main(String[] args) {
+        List<List<Integer>> list = new ArrayList<>();
+        for (int i = 0; i <= 2; i++) {
+            list.add(new ArrayList<>());
+        }
+        list.get(0).add(1);
+        list.get(0).add(2);
+
+        list.get(1).add(2);
+        list.get(1).add(0);
+
+        list.get(2).add(1);
+        list.get(2).add(0);
+
+        boolean[] visited = new boolean[3];
+        List<Integer> res = new ArrayList<>();
+        res = bfs(list);
+        for (int i : res)
+            System.out.println(i);
     }
 }
