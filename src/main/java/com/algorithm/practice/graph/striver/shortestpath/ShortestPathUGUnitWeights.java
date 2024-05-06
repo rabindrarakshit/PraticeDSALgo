@@ -14,7 +14,7 @@ Where N= number of vertices and M= number of edges.
 Space Complexity:  O( N) {for the stack storing the BFS} + O(N) {for the resultant array} + O(N) {for the dist array storing updated shortest paths} + O( N+2M) {for the adjacency list} ~ O(N+M) .
 * */
 
-public class ShortestPath {
+public class ShortestPathUGUnitWeights {
     static int[] shortestPaths(int[][] arr, int vertices, int edges, int source) {
         List<List<Integer>> adjList = new ArrayList<>();
         for (int i = 0; i < vertices; i++) {
