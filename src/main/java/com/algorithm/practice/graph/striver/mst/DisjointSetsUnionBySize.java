@@ -18,7 +18,7 @@ public class DisjointSetsUnionBySize {
         }
     }
 
-    public static int findParent(int node) {
+    public int findParent(int node) {
         if (node == parent.get(node)) {
             return node;
         }
@@ -26,7 +26,7 @@ public class DisjointSetsUnionBySize {
         return parent.get(node);
     }
 
-    static void unionBySize(int u, int v) {
+    public void unionBySize(int u, int v) {
         int up = findParent(u);
         int vp = findParent(v);
         if (up == vp) return;
