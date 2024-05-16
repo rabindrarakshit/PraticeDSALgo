@@ -5,6 +5,12 @@ package com.algorithm.practice.graph.striver.mst;
 import java.util.HashSet;
 import java.util.Set;
 
+/*
+* Time Complexity: O(N), where N = total no. of stones. Here we have just traversed the given stones array several times. And inside those loops, every operation is apparently taking constant time. So, the time complexity is only the time of traversal of the array.
+
+Space Complexity: O(2* (max row index + max column index)) for the parent and size array inside the Disjoint Set data structure.
+* */
+
 public class MostStonesRemoved {
     static int mostStonesRemoved(int[][] arr) {
         int maxRow=Integer.MIN_VALUE, maxCol=Integer.MIN_VALUE;
