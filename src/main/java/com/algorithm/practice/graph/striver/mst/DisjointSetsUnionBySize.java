@@ -32,7 +32,7 @@ public class DisjointSetsUnionBySize {
         if (up == vp) return;
         if (size.get(up) < size.get(vp)) {
             parent.set(up, vp);
-            size.set(up, size.get(vp) + size.get(up));
+            size.set(vp, size.get(vp) + size.get(up));
         } else {
             parent.set(vp, up);
             size.set(up, size.get(up) + size.get(vp));
