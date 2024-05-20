@@ -6,9 +6,9 @@ import java.util.List;
 // Ref: https://takeuforward.org/data-structure/disjoint-set-union-by-rank-union-by-size-path-compression-g-46/
 // Time Complexity:  The time complexity is O(4) which is very small and close to 1. So, we can consider 4 as a constant.
 public class DisjointSetsUnionBySize {
-    static List<Integer> rank = new ArrayList<>();
-    static List<Integer> parent = new ArrayList<>();
-    static List<Integer> size = new ArrayList<>();
+    public List<Integer> rank = new ArrayList<>();
+    public List<Integer> parent = new ArrayList<>();
+    public List<Integer> size = new ArrayList<>();
 
     DisjointSetsUnionBySize(int n) {
         for (int i = 0; i <= n; i++) {
