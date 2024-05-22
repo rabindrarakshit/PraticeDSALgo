@@ -33,28 +33,32 @@ public class TarjansAlgo {
 
     static int counter = 1;
 
-    static List<List<Integer>> dfs(List<List<Integer>> adj, int node, int parent, int[] visited, int[] tin, int[] minIn,
+    static List<List<Integer>> dfs(List<List<Integer>> adj, int node, int parent, int[] visited, int[] tin, int[] low,
                                    List<List<Integer>> bridges) {
         visited[node] = 1;
-        tin[node] = minIn[node] = counter;
+        tin[node] = low[node] = counter;
         counter++;
         for (Integer adjNode : adj.get(node)) {
             if (adjNode == parent) continue;
             if (visited[adjNode] == 0) {
-                dfs(adj, adjNode, node, visited, tin, minIn, bridges);
-                minIn[node] = Math.min(minIn[node], minIn[adjNode]);
+                dfs(adj, adjNode, node, visited, tin, low, bridges);
+                low[node] = Math.min(low[node], low[adjNode]);
                 // node --- it
-                if (minIn[adjNode] > tin[node]) {
+                if (low[adjNode] > tin[node]) {
                     bridges.add(Arrays.asList(adjNode, node));
                 }
             } else {
-                minIn[node] = Math.min(minIn[node], minIn[adjNode]);
+                low[node] = Math.min(low[node], low[adjNode]);
             }
         }
         return bridges;
     }
 
     public static void main(String[] args) {
-
+        int n = 5;
+        int[][] edges = {
+                {0, 1}, {1, 4},
+                {2, 4}, {2, 3}, {3, 4}
+        };
     }
 }
