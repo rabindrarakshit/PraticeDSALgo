@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 // Time : O(mn)
-// Space: O(2mn)
+// Space: O(3mn)
 
 public class SwimInRisingWater {
     static boolean isValid(int adjr, int adjc, int n, int m) {
