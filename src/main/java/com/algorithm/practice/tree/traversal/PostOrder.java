@@ -6,13 +6,16 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
+// Refer: https://takeuforward.org/data-structure/post-order-traversal-of-binary-tree/
+
 public class PostOrder {
     static void postOrder(Node node) {
-        if (node != null) {
-            postOrder(node.left);
-            postOrder(node.right);
-            System.out.println(node.data);
+        if (node == null) {
+            return;
         }
+        postOrder(node.left);
+        postOrder(node.right);
+        System.out.println(node.data);
     }
 
     static List<Node> iterativePostOrder1Stack(Node node) {

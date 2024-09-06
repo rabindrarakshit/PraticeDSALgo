@@ -6,17 +6,20 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
-public class Inorder {
-    static List<Integer> result = new ArrayList<>();
+// Ref: https://takeuforward.org/data-structure/inorder-traversal-of-binary-tree/
 
-    static List<Integer> inOrder(Node node) {
-        if (node.left != null)
-            inOrder(node.left);
-        result.add(node.data);
-        if (node.right != null) {
-            inOrder(node.right);
-        }
-        return result;
+public class Inorder {
+    public static List<Integer> inOrder(Node root) {
+        List<Integer> arr = new ArrayList<>();
+        inOrder(root, arr);
+        return arr;
+    }
+    static void inOrder(Node node, List<Integer> list) {
+        if(node==null)
+            return;
+        inOrder(node.left, list);
+        list.add(node.data);
+        inOrder(node.right, list);
     }
 
     static List<Node> iterativeInOrder(Node node) {
@@ -46,6 +49,8 @@ public class Inorder {
         root.right.left = new Node(13);
         root.right.right = new Node(15);
 
-        iterativeInOrder(root).forEach(n -> System.out.println(n.data));
+        inOrder(root).forEach(n -> System.out.print(n+" "));
+        System.out.println("----");
+        iterativeInOrder(root).forEach(n -> System.out.print(n.data+" "));
     }
 }

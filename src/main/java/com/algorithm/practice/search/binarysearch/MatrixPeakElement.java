@@ -1,5 +1,11 @@
 package com.algorithm.practice.search.binarysearch;
 
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.time.ZoneOffset;
+import java.util.Date;
+
 public class MatrixPeakElement {
 
     static int findMax(int[][] arr, int mid) {
@@ -38,11 +44,17 @@ public class MatrixPeakElement {
     }
 
     public static void main(String[] args) {
-        int[][] arr = {{1, 4, 8},
+       /* int[][] arr = {{1, 4, 8},
                 {2, 1, 4},
                 {1, 2, 5}};
         for (int i : findPeak(arr)) {
             System.out.println(i);
-        }
+        }*/
+
+        LocalDate date = LocalDate.now();
+        System.out.println(date);
+        date.plusDays(3);
+        System.out.println(date);
+        Instant.now().atZone(ZoneOffset.UTC).toLocalDate();
     }
 }

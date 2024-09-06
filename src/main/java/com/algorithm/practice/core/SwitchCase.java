@@ -2,6 +2,7 @@ package com.algorithm.practice.core;
 
 public class SwitchCase {
     public static void main(String[] args) {
+        System.out.println(9/5);
         System.out.println(check());
     }
 

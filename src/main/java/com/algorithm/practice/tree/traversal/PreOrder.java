@@ -6,13 +6,16 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
+// Refer: https://takeuforward.org/data-structure/preorder-traversal-of-binary-tree/
+
 public class PreOrder {
     static void preOrder(Node node) {
-        if (node != null) {
-            System.out.println(node.data);
-            preOrder(node.left);
-            preOrder(node.right);
+        if (node == null) {
+            return;
         }
+        System.out.println(node.data);
+        preOrder(node.left);
+        preOrder(node.right);
     }
 
     static List<Node> iterativePreOrder(Node node) {
@@ -47,6 +50,6 @@ public class PreOrder {
         preOrder(root);
         System.out.println("---------------------------------");
         List<Node> preOrder = iterativePreOrder(root);
-        preOrder.forEach(n-> System.out.println(n.data));
+        preOrder.forEach(n -> System.out.println(n.data));
     }
 }
