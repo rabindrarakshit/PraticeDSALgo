@@ -1,4 +1,7 @@
-package com.algorithm.practice.arrays.easy;
+package com.algorithm.practice.arrays.hard;
+
+import java.util.ArrayList;
+import java.util.List;
 
 //Ref: https://leetcode.com/problems/first-missing-positive/submissions/1214291955/
 // This should be solved in O(N) time and O(1) space
@@ -26,5 +29,11 @@ public class FirstMissingPositive {
             }
         }
         return n + 1;
+    }
+
+    public static void main(String[] args) {
+       List<Character> list = new ArrayList<>();
+       String a = "abcd".substring(0,2);
+        System.out.println(a);
     }
 }

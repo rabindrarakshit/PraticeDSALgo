@@ -5,7 +5,9 @@ package com.algorithm.practice.arrays.hard;
 
 // Ref: https://takeuforward.org/data-structure/length-of-the-longest-subarray-with-zero-sum/
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 // Time Complexity:
@@ -33,6 +35,15 @@ public class MaximumSubArrayWithSumZero {
     }
 
     public static void main(String[] args) {
-        System.out.println(maxLength(new int[]{1, 2, 3, -3, -6, 6}));
+       // System.out.println(maxLength(new int[]{1, 2, 3, -3, -6, 6}));
+        int[] test = new int[]{1,2};
+        List<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.add(2);
+        list.add(0,0);
+        list.add(3);
+        for(Integer i: list){
+            System.out.println(i);
+        }
     }
 }

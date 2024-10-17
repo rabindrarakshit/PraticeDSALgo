@@ -1,4 +1,4 @@
-package com.algorithm.practice.arrays;
+package com.algorithm.practice.arrays.medium;
 
 public class convertArrayToZigZag {
     public static void convertArrayToZigZag(int[] arr){
@@ -32,5 +32,6 @@ public class convertArrayToZigZag {
         for(int i:arr){
             System.out.println(i);
         }
+
     }
 }

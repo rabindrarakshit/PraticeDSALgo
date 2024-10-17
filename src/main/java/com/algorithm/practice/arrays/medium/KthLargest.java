@@ -1,4 +1,4 @@
-package com.algorithm.practice.arrays;
+package com.algorithm.practice.arrays.medium;
 
 public class KthLargest {
     public static int findKthLargest(int[] nums, int k) {

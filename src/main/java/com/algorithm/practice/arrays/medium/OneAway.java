@@ -1,4 +1,4 @@
-package com.algorithm.practice.arrays;
+package com.algorithm.practice.arrays.medium;
 
 public class OneAway {
     public static boolean checkForOneAway(String str1, String str2) {

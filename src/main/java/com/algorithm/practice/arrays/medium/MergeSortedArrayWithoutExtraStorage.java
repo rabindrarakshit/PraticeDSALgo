@@ -1,4 +1,4 @@
-package com.algorithm.practice.arrays;
+package com.algorithm.practice.arrays.medium;
 
 public class MergeSortedArrayWithoutExtraStorage {
     public void merge(int[] nums1, int m, int[] nums2, int n) {

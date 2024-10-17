@@ -1,4 +1,4 @@
-package com.algorithm.practice.arrays;
+package com.algorithm.practice.arrays.medium;
 
 // Stocks one time sell
 public class MaxDiff2ElementsLargerAfterSmaller {

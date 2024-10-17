@@ -21,10 +21,28 @@ public class MergeOverlappingIntervals {
         return list;
     }
 
+    public static int[][] mergeOverlappingIntervals(int[][] intervals) {
+        Arrays.sort(intervals, Comparator.comparingInt(a -> a[0]));
+        int[] currentInterval = intervals[0];
+        List<int[]> mergedIntervals = new ArrayList<>();
+        mergedIntervals.add(currentInterval);
+        for(int i=1;i<intervals.length;i++){
+            int currentEnd = currentInterval[1];
+            int nextStart = intervals[i][0];
+            int nextEnd = intervals[i][1];
+
+            if(currentEnd>=nextStart){
+                currentInterval[1]=Math.max(currentEnd, nextEnd);
+            }else{
+                currentInterval = intervals[i];
+                mergedIntervals.add(currentInterval);
+            }
+        }
+        return mergedIntervals.toArray(new int[mergedIntervals.size()][]);
+    }
+
     public static void main(String[] args) {
         int[][] arr = {{1, 3}, {8, 10}, {2, 6}, {15, 18}};
-        for (List<Integer> it : mergeOverlappingIntervalsOptimized(arr)) {
-            System.out.print("[" + it.get(0) + ", " + it.get(1) + "] ");
-        }
+        mergeOverlappingIntervals(arr);
     }
 }
