@@ -21,3 +21,5 @@ Categories :
 17. Pascals Triangle: App1: r-1Cc-1, App2: for row n (1-based), first element 1, next ans = ans * (n-i); ans = ans / i; -> print row
 18. Repeating and Missing Number : Algebraic Soln : S = n(n+1)/2 , Sum of Squares = n(n+1)(2n+1)/6. Difference in sum = x-y, and x2-y2 = diff in squares. Solve them.
 19. Count Inversions, Reverse Pairs -> Merge Sort
+20. Binary Search -> Answers -> Find Min -> return low, Find Max -> return high (Ex: Find Min capacity of ship to ship in d days)
+21. 
